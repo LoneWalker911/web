@@ -1,5 +1,7 @@
 <?php
+include '../../cookiechk.php';
 require '../../dbcon.php';
+$pass=false;
 if (isset($_POST['submit'])){
 $nic = $_POST['nic'];
 $name = $_POST['name'];
@@ -19,12 +21,13 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO farmer (nic, name, mobile, address1, address2, email, lat, lng, district, password)
-VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district, '$psw')";
+$sql = "INSERT INTO farmer (nic, name, mobile, address1, address2, email, lat, lng, district)
+VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district)";
 
-echo $sql;
+$sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
+VALUES ('$nic', '$psw', 3, '$nic')";
 
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($conn, $sql)&&mysqli_query($conn, $sql2)) {
   $pass=true;
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -44,10 +47,8 @@ mysqli_close($conn);
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
-    <!-- Display the countdown timer in an element -->
 
     <script>
-    // Set the date we're counting down to
     function timer(){
     var countDownDate = new Date().getTime()+5000;
 
