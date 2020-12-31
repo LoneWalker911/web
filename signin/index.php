@@ -1,28 +1,9 @@
 <?php
 require '../dbcon.php';
-if(isset($_COOKIE['usr'])) {
-  $string=$_COOKIE['usr'];
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  $sql = "SELECT loginstring,exptime FROM login WHERE loginstring='$string'";
-
-  $result = mysqli_query($conn, $sql);
-  if (mysqli_num_rows($result) > 0) {
-
-  while($row = mysqli_fetch_assoc($result)) {
-  if((double)$row['exptime']>time())
-  {
-    echo "win";
-  }
-    }
-  }
-  mysqli_close($conn);
- }
-
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 if (isset($_POST['submit'])){
 $uname = $_POST['username'];
 $psw = $_POST['psw'];
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
@@ -51,6 +32,7 @@ if($row['1']==1)
   }while(!$pass);
     if ($pass) {
       setcookie("usr", $randomString, time() + (86400 * 30), "/");
+      header("Location:/web/signin");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -58,8 +40,43 @@ if($row['1']==1)
 
   }
 }
-mysqli_close($conn);
+
 }
+
+if(isset($_COOKIE['usr'])) {
+  $string=$_COOKIE['usr'];
+  $sql = "SELECT user_type.type,exptime FROM login,user_type WHERE loginstring='$string' AND login.user_type_id=user_type.id";
+
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+
+  while($row = mysqli_fetch_assoc($result)) {
+  if((double)$row['exptime']>time())
+  {
+    switch ($row['type']) {
+    case "Farmer":
+      header("Location:/web/farmer");
+      break;
+    case "DoA":
+      echo "Your favorite color is blue!";
+      break;
+    case "Keells":
+      echo "Your favorite color is green!";
+      break;
+    default:
+      echo "Your favorite color is neither red, blue, nor green!";
+  }
+
+    }
+    else {
+      setcookie("usr", "", time() - 1800, "/");
+    }
+  }
+
+}else {
+  setcookie("usr", "", time() - 1800, "/");
+}}
+ mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -80,7 +97,8 @@ mysqli_close($conn);
       <input type="checkbox" name="rem" value="">
       <br>
       <input type="submit" name="submit" value="submit">
-
     </form>
+    <a href="/web/farmer/signup">
+    <button type="button" name="button">Signup</button></a>
   </body>
 </html>
