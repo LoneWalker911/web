@@ -1,14 +1,15 @@
+<?php
+  require 'dbcon.php';
+  include 'window/sidelist.php';
+?>
 <!DOCTYPE html>
-<?php require 'dbcon.php';
-include 'sidelist.php';?>
 <html>
-<link rel="stylesheet" type="text/css" href="side.css">
-<script src="javascript.js">
-</script>
+<link rel="stylesheet" type="text/css" href="publicMap.css">
+<script src="publicMap.js"></script>
 
 <body>
 
-<div id="side-panel">   </div>
+<div id="side-panel"></div>
 
 <div id="googleMap" style="left:25%;top:0;height:100%;width:75%;position:absolute;"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap">
