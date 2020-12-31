@@ -4,13 +4,7 @@ var activeInfoWindow;
 function mainMap() {
 var mapProp= {
   center: new google.maps.LatLng(7.85072,80.65716),
-  zoom:8.3,
-  zoomControl: true,
-  mapTypeControl: false,
-  scaleControl: false,
-  streetViewControl: false,
-  rotateControl: false,
-  fullscreenControl: false
+  zoom:8,
 }
 map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }

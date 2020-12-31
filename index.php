@@ -1,6 +1,5 @@
 <?php
   require 'dbcon.php';
-  include 'window/sidelist.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +10,7 @@
 
 <div id="side-panel"></div>
 
-<div id="googleMap" style="left:25%;top:0;height:100%;width:75%;position:absolute;"></div>
+<div id="googleMap" ></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap">
 </script>
 
