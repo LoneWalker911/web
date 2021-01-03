@@ -1,14 +1,3 @@
-
-
-#googleMap{
-  top: 0;
-  left: 10%;
-  height:100%;
-  width:80%;
-
-  position:fixed;
-}
-
 .map_info_wrapper{
     box-shadow:none;
     color:#515151;
