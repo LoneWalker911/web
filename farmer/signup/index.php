@@ -1,5 +1,5 @@
 <?php
-include '../../cookiechk.php';
+// check cookie but do not redirect if a cookies is not found
 require '../../dbcon.php';
 $pass=false;
 if (isset($_POST['submit'])){
