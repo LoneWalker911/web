@@ -107,6 +107,9 @@ mysqli_close($conn);
         echo "<option value=".$row['id'].">".$row['district']."</option>";
           }
         }
+        else {
+          echo "<option value="">Database Connection Failed.</option>"
+        }
         mysqli_close($conn);
          ?>
       </select>

@@ -1,5 +1,23 @@
 var map;
 var activeInfoWindow;
+//
+// function FetchInfoWindow(id) {
+//   if (id == 0) {
+//     return "<h2>INVALID RESPONSE</h2>";
+//   } else {
+//     var xmlhttp = new XMLHttpRequest();
+//     xmlhttp.onreadystatechange = function() {
+//       if (this.readyState == 4 && this.status == 200) {
+//         var output = <h2>VALID RESPONSE</h2>;
+//         console.log(this.response);
+//         console.log(output);
+//         return res;
+//       }
+//     };
+//     xmlhttp.open("GET", "//localhost/web/ajax/infowindow.php?id=" + id, true);
+//     xmlhttp.send();
+//   }
+// }
 
 function mainMap() {
 var mapProp= {
@@ -24,40 +42,32 @@ function info(id)
   return output;
 }
 
-function marker(lat,lon,content,text)
+function marker(lat,lon,id)
 {
   var mark=new google.maps.Marker({position: new google.maps.LatLng(lat, lon)});
   mark.setMap(map);
+  //var content=FetchInfoWindow(id);
 
   google.maps.event.addListener(mark,'click',function() {
   map.setCenter(mark.getPosition());
   map.setZoom(9);
-  document.getElementById("side-panel").innerHTML=info(1);
-});
-var content="<div class='map_info_wrapper'><div class='img_wrapper'><img src='veg.jpg'></div>"+"<br>"+
 
-       "<div class='property_content_wrap'>"+
-       "<div class='property_title'>"+
-       "<span>FARMER NAME</span>"+
-       "</div>"+
-
-       "<div class='property_type'>"+
-       "<span>Beans</span> <span>100KG</span> <span>Rs:150.00/KG</span>"+
-       "</div>"+
-
-       "<br>"+
-
-       "<div class='property_listed_date'>"+
-       "<span>Listed on 2020/02/26</span>"+
-       "</div>"+
-       "</div></div";
-var infowindow = new google.maps.InfoWindow({
-content:content
-});
-
-google.maps.event.addListener(mark, 'click', function() {
+  var infowindow = new google.maps.InfoWindow({
+  content:"<p class'loading-txt'>Loading...</p>",
+  maxWidth: 200
+  }
+  );
   if (activeInfoWindow) { activeInfoWindow.close();}
   infowindow.open(map,mark);
   activeInfoWindow = infowindow;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var output = "<h2>VALID RESPONSE</h2>";
+      infowindow.setContent(this.responseText);
+    }
+  };
+  xmlhttp.open("GET", "//localhost/web/ajax/infowindow.php?id=" + id, true);
+  xmlhttp.send();
 });
 }

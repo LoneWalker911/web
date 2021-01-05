@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="publicMap.js">
-
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -11,11 +10,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link rel="stylesheet" type="text/css" href="aaaa.css">
-    <link rel="stylesheet" type="text/css" href="nav.css">
+    <style media="screen">
+    .map_info_wrapper{
+        box-shadow:none;
+        color:#515151;
+        font-family: "Georgia", "Open Sans", Sans-serif;
+        text-align: center;
+        width: 100% !important;
+        border-radius: 0;
+        left: 0 !important;
+        top: 20px !important;
+    }
+
+     #propertymap .gm-style-iw > div > div{
+        background: #FFF!important;
+    }
+
+    .img_wrapper {
+        height: 150px;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    .img_wrapper > img {
+        width: 100%;
+        height:auto;
+    }
+
+    .property_content_wrap {
+        padding: 0px 0px;
+    }
+
+    .property_title{
+        min-height: auto;
+        font-weight: bold;
+    }
+    .property_listed_date{
+      font-style: italic;
+      font-size: 12px;
+    }
+    .property_type{
+      word-spacing: 10px;
+      font-weight: bold;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/navbar/footer.css">
+    <link rel="stylesheet" type="text/css" href="/navbar/nav.css">
     <title></title>
   </head>
   <body>
+    <?php include 'sidelist.php'; ?>
     <div class="navigation">
       <ul class="nav1">
 
@@ -80,7 +126,7 @@ function showSlides() {
 }
 </script>
 
-
+<p id='test'></p>
 
 <div class="responsive">
   <div id="googleMap"></div>
@@ -88,7 +134,27 @@ function showSlides() {
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap">
 </script>
+<script>
+<?php
+require '../dbcon.php';
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
+
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0){
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
+  }
+}
+mysqli_close($conn);
+
+ ?>
+</script>
 <div class="rownews">
   <div class="column1" style="background-color:#aaa;">
     <h2>Column 1</h2>
@@ -109,72 +175,7 @@ function showSlides() {
 </div>
 
 
-<footer class="mainfooter" role="contentinfo">
-  <div class="footer-middle">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 1</h4>
-          <ul class="list-unstyled">
-            <li><a href="#"></a></li>
-            <li><a href="#">Payment Center</a></li>
-            <li><a href="#">Contact Directory</a></li>
-            <li><a href="#">Forms</a></li>
-            <li><a href="#">News and Updates</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 2</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 3</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <h4>Follow Us</h4>
-            <ul class="social-network social-circle">
-             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-    </div>
-    </div>
-  <div class="row">
-    <div class="col-md-12 copy">
-      <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
-    </div>
-  </div>
-
-
-  </div>
-  </div>
-</footer>
+<?php include 'footer.php'; ?>
 
 
 

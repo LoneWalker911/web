@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link rel="stylesheet" type="text/css" href="navbar\aaaa.css">
-    <link rel="stylesheet" type="text/css" href="navbar\nav.css">
-    <title></title>
-  </head>
-  <body>
-    <div class="rownews">
-      <div class="column1" style="background-color:#aaa;">
-        <h2>Column 1</h2>
-        <p>Some text..</p>
-      </div>
-      <div class="column1" style="background-color:#bbb;">
-        <h2>Column 2</h2>
-        <p>Some text..</p>
-      </div>
-      <div class="column1" style="background-color:#ccc;">
-        <h2>Column 3</h2>
-        <p>Some text..</p>
-      </div>
-      <div class="column1" style="background-color:#ddd;">
-        <h2>Column 4</h2>
-        <p>Some text..</p>
-      </div>
-    </div>
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  <link rel="stylesheet" type="text/css" href="footer.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
     <footer class="mainfooter" role="contentinfo">
       <div class="footer-middle">
       <div class="container">
@@ -98,7 +72,3 @@
       </div>
       </div>
     </footer>
-
-
-  </body>
-</html>
