@@ -1,0 +1,59 @@
+table{
+
+  border-collapse: collapse;
+  box-shadow: -2px 1px 14px #e5e6e8;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+
+.mySlides1 {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.messagebtn {
+  background-color: #1E90FF;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: auto;
+
+}
+.messagebtn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.FName{
+  float: left;
+  font-size: 20px;
+  text-align: left;
+  font-family: Arial;
+  font-weight: bold;
+}
+.listdate{
+  font-style: italic;
+  font-size: 13px;
+  color: #D3D3D3;
+}
+.Harvesttype{
+  color: #2E8B57;
+}
+.material-icons{
+  color: #4169E1;
+}
+.note{
+  color: #DC143C;
+  background-color:#DCDCDC;
+}

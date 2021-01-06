@@ -2,6 +2,7 @@ var map;
 var activeInfoWindow;
 
 
+
 function mainMap() {
 var mapProp= {
   center: new google.maps.LatLng(7.85072,80.65716),
@@ -16,13 +17,23 @@ var mapProp= {
 map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 
-function info(id)
+function FetchSide(id)
 {
-  //php server-> SELECT INFO WHERE ID = id -> info[30];
-
-  var output="<h1 class='title'>info[0].toString();</h1>";
-
-  return output;
+  var xhttp;
+  document.getElementById("side").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  if (id == 0) {
+    document.getElementById("side").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("side").innerHTML = this.responseText;
+    showSlides1(slideIndex);
+    }
+  };
+  xhttp.open("GET", "//localhost/web/ajax/side-panel.php?id="+id, true);
+  xhttp.send();
 }
 
 function marker(lat,lon,id)
