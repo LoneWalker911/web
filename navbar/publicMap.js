@@ -51,4 +51,8 @@ function marker(lat,lon,id)
   xmlhttp.open("GET", "//localhost/web/ajax/infowindow.php?id=" + id, true);
   xmlhttp.send();
 });
+
+google.maps.event.addListener(map,'click',function() {
+activeInfoWindow.close();
+});
 }

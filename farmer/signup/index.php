@@ -1,5 +1,42 @@
 <?php
 // check cookie but do not redirect if a cookies is not found
+
+if(isset($_COOKIE['usr'])) {
+  $string=$_COOKIE['usr'];
+  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  $sql = "SELECT user_type.type,exptime FROM login,user_type WHERE loginstring='$string' AND login.user_type_id=user_type.id";
+
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+
+  while($row = mysqli_fetch_assoc($result)) {
+  if((double)$row['exptime']>time())
+  {
+    switch ($row['type']) {
+    case "Farmer":
+      header("Location:/web/farmer");
+      break;
+    case "DoA":
+      header("Location:/web/doa");
+      break;
+    case "Keells":
+      header("Location:/web/keells");
+      break;
+    case "Admin":
+        header("Location:/web/admin");
+        break;
+  }
+    }
+    else {
+      setcookie("usr", "", time() - 1800, "/");
+    }
+  }
+}else {
+  setcookie("usr", "", time() - 1800, "/");
+}
+mysqli_close($conn);
+}
+
 require '../../dbcon.php';
 $pass=false;
 if (isset($_POST['submit'])){
