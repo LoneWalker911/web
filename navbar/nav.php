@@ -10,7 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link rel="stylesheet" type="text/css" href="sidelist.css">
     <style media="screen">
+
     .map_info_wrapper{
         box-shadow:none;
         color:#515151;
@@ -61,7 +63,7 @@
     <title></title>
   </head>
   <body>
-    <?php include 'sidelist.php'; ?>
+
     <div class="navigation">
       <ul class="nav1">
 
@@ -104,6 +106,12 @@
   <span class="dot"></span>
 </div>
 
+    <?php include 'sidelist.php'; ?>
+
+
+<div class="responsive">
+  <div id="googleMap"></div>
+</div>
 <script>
 var slideIndex = 0;
 showSlides();
@@ -128,9 +136,7 @@ function showSlides() {
 
 <p id='test'></p>
 
-<div class="responsive">
-  <div id="googleMap"></div>
-</div>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap">
 </script>

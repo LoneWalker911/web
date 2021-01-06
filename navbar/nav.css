@@ -3,7 +3,7 @@ body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
-.gm-style-iw > button {display: none !important;}
+
 ul.nav1 {
   margin: 0 auto 0;
 
@@ -62,17 +62,18 @@ a.signin:after{
   background: #DC143C;
 }
 #googleMap{
- position: absolute;
-  left: 10%;
-  top: 0;
-  height:100%;
-  width:80%;
+ position: relative;
+ /*left: 30%;
+  top: 0;*/
+ height: 500px;
+ width: 500px;
+ /* width: 800px; */
 }
 .responsive{
   overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+  /* padding-left: 56.25%; */
+  position:relative;
+  height: 50%;
 }
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}

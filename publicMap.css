@@ -6,7 +6,7 @@
   height:100%;
   width:80%;
 
-  position:fixed;
+  position:initial;
 }
 
 .map_info_wrapper{

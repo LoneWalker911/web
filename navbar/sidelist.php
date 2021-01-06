@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="sidelist.css">
-    <title></title>
-  </head>
-  <body>
+
     <div class="list_table">
-      <table style="width:25%">
+      <table style="float:left">
         <?php
         require '../dbcon.php';
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -38,11 +31,11 @@
             $pic = $row['picture_1'];
             $date = date("d.m.y", strtotime($row["date"]));
             $temp_id=$row["nic"];
-            $districtdiv = "<tr><th><div class='Farmer_name'><span>".$row['district']."</span></div><br><div class='Harvest'><ul>";
+            $districtdiv = "<tr><td><div class='Farmer_name'><span>".$row['district']."</span></div><br><div class='Harvest'><ul>";
               $cropdiv="<li>".$row['crop_type']." ".$row['qty_kg']."KG Rs:".$row['price']."/KG</li><br>";
               $datediv="</ul><div class='listed_date'><span>Listed on $date</span></div>
-              </div></th>";
-              $picdiv="<th><div class='list_image'><img src='".$pic."'></div></th>
+              </div></td>";
+              $picdiv="<td><div class='list_image'><img src='".$pic."'></div></td>
             </tr>
             <tr>";
           }
@@ -55,6 +48,3 @@
 </table>
 
     </div>
-
-  </body>
-</html>
