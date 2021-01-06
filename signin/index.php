@@ -82,23 +82,33 @@ if(isset($_COOKIE['usr'])) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../forms.css">
     <title></title>
-    <link rel="stylesheet" href="/css/signin.css">
+
   </head>
   <body>
-    <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-      <label>National ID / Username</label>
-      <input type="text" name="username" value="">
+    <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+
+      <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+      <label for="inputEmail" class="sr-only">National ID / Username</label>
+      <input type="text" placeholder="Enter National ID / Username" name="username" class="form-control" required>
+
       <br>
-      <label>Password</label>
-      <input type="password" name="psw" value="">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" name="psw" class="form-control" placeholder="Password" required>
       <br>
-      <label>Remember</label>
-      <input type="checkbox" name="rem" value="">
-      <br>
-      <input type="submit" name="submit" value="submit">
-    </form>
-    <a href="/web/farmer/signup">
-    <button type="button" name="button">Signup</button></a>
+
+      <div class="checkbox mb-3">
+          <label>
+          <input type="checkbox" name="rem" value="remember-me"> Remember me
+        </label>
+      </div>
+          <button class="btn btn-lg btn-warning btn-block" type="reset">Clear</button>
+          <button class="btn btn-lg btn-primary btn-block" name="submit" id="signbtn" type="submit">Sign in</button>
+          <br>
+          <p1>If you want to Register :<a>click here</a></p1>
+
+  </form>
   </body>
 </html>

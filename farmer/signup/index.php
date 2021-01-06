@@ -41,8 +41,11 @@ mysqli_close($conn);
   <head>
     <meta charset="utf-8">
     <title>Farmer Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../forms.css">
     <script type="text/javascript" src="map.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=initMap&libraries=&v=weekly"
       defer
@@ -80,22 +83,30 @@ mysqli_close($conn);
   <body>
     <p id="timer" style="display:none;"></p>
     <?php if($pass) echo "<script>timer();</script>"; ?>
-    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-      <label for="nic">National ID Number</label>
-      <input type="text" name="nic" maxlength="12" value="" required>
-      <br>
-      <label for="name">Full Name</label>
-      <input type="text" name="name" value="" required>
-      <br>
-      <label for="mobile">Mobile</label>
-      <input type="text" maxlength="10" name="mobile" value="" placeholder="07xxxxxxxx" required>
-      <br>
-      <label for="address">Address</label>
-      <input type="text" name="address1" value="" placeholder="1st Line" required>
-      <input type="text" name="address2" value="" placeholder="2nd Line">
-      <br>
-      <label for="district">District</label>
-      <select name="district">
+    <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+
+            <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+
+            <label for="inputEmail" class="sr-only">National ID</label>
+            <input type="text" placeholder="National ID" name="nic" class="form-control" required>
+            <br>
+
+            <label for="inputFname" class="sr-only">Full Name</label>
+            <input type="text" placeholder="Full Name " name="name" class="form-control" required>
+            <br>
+
+            <label for="inputmobile" class="sr-only">Mobile</label>
+            <input type="text" placeholder="Mobile" name="mobile" class="form-control" required>
+            <br>
+
+            <label for="inputaddress" class="sr-only">Address</label>
+            <input type="text" placeholder="1st Line" name="address1" class="form-control" required>
+            <br>
+            <input type="text" placeholder="2nd Line" name="address2" class="form-control" required>
+            <br>
+
+            <label for="inputdistrict" class="sr-only">District</label><br>
+            <select name="district" class="district01">
         <?php
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -108,26 +119,33 @@ mysqli_close($conn);
           }
         }
         else {
-          echo "<option value="">Database Connection Failed.</option>"
+          echo "<option value=''>Database Connection Failed.</option>";
         }
         mysqli_close($conn);
          ?>
       </select>
-      <br>
-      <label for="email">Email</label>
-      <input type="text" name="email" value="" placeholder="someone@email.com" >
-      <br>
-      <input id="lat" type="hidden" name="lat" value="">
-      <input id="lng" type="hidden" name="lng" value="">
-      <div id="map" style="height:400px;width:400px;"></div>
-      <br>
-      <label for="password">Password</label>
-      <input type="text" value="">
-      <br>
-      <label for="cnfpassword">Confirm Password</label>
-      <input type="text" name="psw" value="">
-      <br>
-      <input type="submit" name="submit" value="submit">
-    </form>
+            <br>
+            <br>
+            <label for="inputemail" class="sr-only">E-mail</label>
+            <input type="text" placeholder="someone@gmail.com" name="email" class="form-control" required>
+            <br>
+
+            <input id="lat" type="hidden" name="lat" value="">
+            <input id="lng" type="hidden" name="lng" value="">
+            <div id="map" style="height:275px;width:auto;;"></div>
+            <br>
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password"  id="password" class="form-control"  required>
+            <br>
+
+            <label for="cnfpassword" class="sr-only">Confirm Password</label>
+            <input type="password" name="psw" id="confpassword" class="form-control"  required>
+            <br>
+
+            <button class="btn btn-lg btn-warning btn-block" type="reset">Clear</button>
+            <button class="btn btn-lg btn-primary btn-block" class="submit" id="signbtn" type="submit">Submit</button>
+
+        </form>
   </body>
 </html>
