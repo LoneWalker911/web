@@ -1,33 +1,36 @@
 <?php
 require '../../dbcon.php';
 if (isset($_POST['submit'])){
-// $name = $_POST['name'];
-// $uname = $_POST['uname'];
-// $mobile = $_POST['mobile'];
-// $address1 = $_POST['address'];
-// $email = $_POST['email'];
-// $psw = $_POST['psw'];
-// $type = $_POST['type'];
-//
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
-//
-// if (!$conn) {
-//   die("Connection failed: " . mysqli_connect_error());
-// }
-//
-// $sql = "INSERT INTO staff (name, mobile, address, type, email, password)
-// VALUES ('$name', '$mobile', '$address', $type '$email', '$psw')";
-//
-// $sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
-// VALUES ('$nic', '$psw', 3, '$nic')";
-//
-// if (mysqli_query($conn, $sql) && mysqli_query($conn, $sql2)) {
-//   $pass=true;
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
-//
-// mysqli_close($conn);
+$name = $_POST['name'];
+$uname = $_POST['uname'];
+$mobile = $_POST['mobile'];
+$address1 = $_POST['address'];
+$email = $_POST['email'];
+$psw = $_POST['psw'];
+$type = $_POST['type'];
+
+$psw=md5($uname.$psw);
+
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO staff (name, mobile, address, type, email, password)
+VALUES ('$name', '$mobile', '$address', $type '$email', '$psw')";
+
+$sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
+VALUES ('$uname', '$psw', $type, '$nic')";
+
+if (mysqli_query($conn, $sql) && mysqli_query($conn, $sql2)) {
+  $pass=true;
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
 }
 
  ?>
@@ -131,6 +134,14 @@ if (isset($_POST['submit'])){
           document.getElementById('error').innerHTML="Invalid email address. Please try again";
           return false;
         }
+
+        var str = document.forms["addStaff"]["psw"].value;
+        var patt = /<(.|\n)+?>/i;
+        if(!patt.test(str))
+        {
+          document.getElementById('error').innerHTML="Invalid password. Please try again";
+          return false;
+        }
       }
     </script>
     <title>Add Staff</title>
@@ -162,8 +173,8 @@ if (isset($_POST['submit'])){
       <input type="password" name="psw" value="" required>
       <br>
       <p id="error"></p>
-      <input type="submit" id="submit" disabled name="Submit" value="submit">
       <input type="reset" name="" onclick="Reset();" value="Clear">
+      <input type="submit" id="submit" disabled name="Submit" value="submit">
     </form>
   </body>
 </html>
