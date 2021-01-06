@@ -17,26 +17,27 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
 <div class="container">
-<a class="navbar-brand" href="index.php">KEELLS<span>AGRY</span></a>
+<a class="navbar-brand" href="index.html">Digi<span>Lab</span></a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="oi oi-menu"></span> Menu
 </button>
 <div class="collapse navbar-collapse" id="ftco-nav">
 <ul class="navbar-nav nav ml-auto">
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-<li class="nav-item"><a href="#services-section" class="nav-link"><span>Agry map</span></a></li>
+<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
 <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <li class="nav-item"><a href="#testimony-section" class="nav-link"><span>Testimony</span></a></li>
+<!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 </ul>
 </div>
 </div>
 </nav>
 <section id="home-section" class="hero">
-<h3 class="vr">Welcome to KEELS AGRY</h3>
+<h3 class="vr">Welcome to DigiLab</h3>
 <div class="home-slider js-fullheight owl-carousel">
 <div class="slider-item js-fullheight">
 <div class="overlay"></div>
@@ -147,7 +148,7 @@
 </div>
 </section>
 
-
+</section>
 <section class="ftco-section ftco-project bg-light" id="projects-section">
 <div class="container px-md-5">
 <div class="row justify-content-center pb-5">
@@ -235,7 +236,7 @@
 <div class="container">
 <div class="row d-flex">
 <div class="col-md-6 col-lg-5 d-flex">
-<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/akka.jpg);">
+<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.jpg);">
 </div>
 </div>
 <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
