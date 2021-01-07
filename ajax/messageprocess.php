@@ -162,11 +162,11 @@ mysqli_close($conn);
 exit;
 }
 
-if($_POST['func']=="keells_send"){
+if($_GET['func']=="keells_send"){
 $loginstring = htmlspecialchars($_COOKIE['usr']);
 $uname="";
-$rec=$_POST['rec'];
-$msg = $_POST['message'];
+$rec=$_GET['rec'];
+$msg = $_GET['message'];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {

@@ -1,7 +1,5 @@
 <?php
   require 'dbcon.php';
-  $user_type="";
-  $login_username="";
   if(isset($_COOKIE['usr'])) {
     $string=$_COOKIE['usr'];
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -20,8 +18,11 @@
     }
       }
     }
-    else
+    else{
+      setcookie("usr", "", time() - 1800, "/");
       header("Location:/web/signin");
+    }
+
 
     mysqli_close($conn);
   }

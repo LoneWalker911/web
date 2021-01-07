@@ -1,6 +1,7 @@
 var id="";
 var temp="";
 var arr = [];
+const messages = document.getElementById('msgs');
 
 function test(th){
   id=th;
@@ -9,7 +10,10 @@ function test(th){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById('msgs').innerHTML=this.responseText;
+      if(document.getElementById('msgs').innerHTML!=this.responseText)
+        { console.log(document.getElementById('msgs').innerHTML);
+          document.getElementById('msgs').innerHTML=this.responseText;
+        scrollToBottom();}
     }
   };
   xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_check&id=" + id, true);
@@ -19,17 +23,21 @@ function test(th){
     arr = [];
   })
   checkMsg();
+
 }
 
 function checkMsg() {
   temp=id;
+
   arr.push(setInterval(function() {
     console.log("RUN"+id+" "+temp);
     var xhttp;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-          document.getElementById('msgs').innerHTML=this.responseText;
+        if(document.getElementById('msgs').innerHTML!=this.responseText)
+          {document.getElementById('msgs').innerHTML=this.responseText;
+          scrollToBottom();}
       }
     };
     xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_check&id=" + id, true);
@@ -39,9 +47,11 @@ function checkMsg() {
 
 function fetchContacts() {
   var xhttp;
+  scrollToBottom();
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+      if(document.getElementById('srcdiv').innerHTML!=this.responseText)
         document.getElementById('srcdiv').innerHTML=this.responseText;
     }
   };
@@ -57,14 +67,18 @@ function sendMsg() {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById('msg').value="";
-        checkMsg(usrid);
+        test(id);
     }
   };
-  xmlhttp.open("POST", "//localhost/web/ajax/messageprocess.php", true);
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("func=keells_send&message=" + message +"&rec="+usrid);
+  xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_send&message=" + message + "&rec=" + id, true);
+  xmlhttp.send();
 }}
+
+function scrollToBottom() {
+  messages.scrollTop = messages.scrollHeight;
+}
 
 
 fetchContacts();
+//setInterval(function() {scrollToBottom();}, 300);
 setInterval(function() {fetchContacts();}, 3000);

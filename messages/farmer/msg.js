@@ -27,4 +27,4 @@ function sendMsg() {
 }}
 
 checkMsg();
-//setInterval(function() {checkMsg();}, 3000);
+setInterval(function() {checkMsg();}, 3000);
