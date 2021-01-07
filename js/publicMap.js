@@ -36,7 +36,7 @@ function marker(lat,lon,id)
 
   var infowindow = new google.maps.InfoWindow({
   content:"<p class'loading-txt'>Loading...</p>",
-  maxWidth: 200
+  //maxWidth: 200
   }
   );
   if (activeInfoWindow) { activeInfoWindow.close();}

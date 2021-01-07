@@ -147,10 +147,11 @@
 </div>
 </div>
 </section>
-<section class="ftco-sectiong">
+<section class="ftco-section">
   <div class="container-fluid">
     <div id="googleMap"></div>
   </div>
+
 </section>
 </section>
 <section class="ftco-section ftco-project bg-light" id="projects-section">
@@ -691,6 +692,28 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+<?php
+require 'dbcon.php';
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
+
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0){
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
+  }
+}
+mysqli_close($conn);
+
+?>
+</script>
 
 <script>
   window.dataLayer = window.dataLayer || [];

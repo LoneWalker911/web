@@ -17,14 +17,14 @@ if (mysqli_num_rows($result) > 0){
   $date = date("d.m.y", strtotime($row["date"]));
     echo "<div class='item'>";
       echo "<div class='testimony-wrap text-center py-4 pb-5'>";
-        echo "<div class='user-img" style="background-image: url($pic)'>";
+        echo "<div class='user-img'style='background-image:url($pic)'>";
       echo "</div>";
       echo "<div class='text px-4 pb-5'>";
-      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".date("d.m.y", strtotime($row["qty_kg"]))."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
+      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".$row["qty_kg"]."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
     while($row = mysqli_fetch_assoc($result)){
-      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".date("d.m.y", strtotime($row["qty_kg"]))."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
+      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".$row["qty_kg"]."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
     }
-          echo "<span class="position">Listed-On :$date</span>";
+          echo "<span class='position'>Listed-On :$date</span>";
         echo "</div>";
       echo "</div>";
     echo "</div>";
