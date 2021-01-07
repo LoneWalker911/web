@@ -13,6 +13,9 @@
   position: relative;
 }
 
+.slide2{
+  padding-left: 53%;
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8183,7 +8186,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     top: 0;
     margin-top: -130px;
-    background: #fff !important;
+    background: #f8f8f8 !important;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     padding: 0 15px; }

@@ -15,21 +15,16 @@ if (mysqli_num_rows($result) > 0){
   $row = mysqli_fetch_assoc($result);
   $pic = $row['picture_1'];
   $date = date("d.m.y", strtotime($row["date"]));
-    echo "<div class='map_info_wrapper'>";
-      echo "<div class='img_wrapper'>";
-        echo "<img src='$pic'>";
+    echo "<div class='item'>";
+      echo "<div class='testimony-wrap text-center py-4 pb-5'>";
+        echo "<div class='user-img" style="background-image: url($pic)'>";
       echo "</div>";
-      echo "<br>";
-      echo "<div class='property_content_wrap'>";
-        echo "<div class='property_type'>";
-          echo "<div onClick='FetchSide(".$row['id'].");'><span>".$row['crop_type']."</span> <span>".date("d.m.y", strtotime($row["qty_kg"]))."kg</span> <span>Rs:".$row['price']."/KG</span></div>";
+      echo "<div class='text px-4 pb-5'>";
+      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".date("d.m.y", strtotime($row["qty_kg"]))."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
     while($row = mysqli_fetch_assoc($result)){
-      echo "<div onClick='FetchSide(".$row['id'].");'><span>".$row['crop_type']."</span> <span>".date("d.m.y", strtotime($row["qty_kg"]))."</span> <span>Rs:".$row['price']."/KG</span></div>";
+      echo "<p class='mb-4' onClick='FetchSide(".$row['id'].");'><span span style='padding-left:3em;'>".$row['crop_type']."</span> <span style='padding-left:3em;'>".date("d.m.y", strtotime($row["qty_kg"]))."kg</span style='padding-left:3em;'> <span>Rs:".$row['price']."/KG</span></p>";
     }
-        echo "</div>";
-        echo "<br>";
-        echo "<div class='property_listed_date'>";
-          echo "<span>Listed on $date</span>";
+          echo "<span class="position">Listed-On :$date</span>";
         echo "</div>";
       echo "</div>";
     echo "</div>";

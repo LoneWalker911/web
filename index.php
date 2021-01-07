@@ -19,7 +19,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
 <div class="container">
-<a class="navbar-brand" href="index.html">Digi<span>Lab</span></a>
+<a class="navbar-brand" href="index.html"><span>KEELLS</span>AGRI</a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="oi oi-menu"></span> Menu
 </button>
@@ -37,18 +37,18 @@
 </div>
 </nav>
 <section id="home-section" class="hero">
-<h3 class="vr">Welcome to DigiLab</h3>
+<h3 class="vr">Welcome to the keells agri</h3>
 <div class="home-slider js-fullheight owl-carousel">
 <div class="slider-item js-fullheight">
 <div class="overlay"></div>
 <div class="container-fluid p-0">
 <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-<div class="one-third order-md-last img js-fullheight" style="background-image:url(images/slides5.jpg);">
+<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(images/slides5.jpg);">
 <div class="overlay"></div>
 </div>
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 <div class="text">
-<span class="subheading">Welcome to the digilab</span>
+<span class="subheading">Welcome to the keells agri</span>
 <h1 class="mb-4 mt-3">Small Details Make A Big <span>Impression</span></h1>
 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
 <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
@@ -61,12 +61,12 @@
 <div class="overlay"></div>
 <div class="container-fluid p-0">
 <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-<div class="one-third order-md-last img js-fullheight" style="background-image:url(images/slide3.jpg);">
+<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(images/slide31.jpg);">
 <div class="overlay"></div>
 </div>
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 <div class="text">
-<span class="subheading">Welcome to the digilab</span>
+<span class="subheading">Welcome to the keells agri</span>
 <h1 class="mb-4 mt-3"><span>Strategic</span> Design And <span>Technology</span> Agency</h1>
 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
 <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
@@ -240,14 +240,14 @@
 <div class="container">
 <div class="row d-flex">
 <div class="col-md-6 col-lg-5 d-flex">
-<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.jpg);">
+<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/akka.jpg);">
 </div>
 </div>
 <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
 <div class="py-md-5">
 <div class="row justify-content-start pb-3">
 <div class="col-md-12 heading-section ftco-animate">
-<span class="subheading">Welcome to digilab</span>
+<span class="subheading">Welcome to the keells agri</span>
 <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">We Are Digital Agency</h2>
 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
