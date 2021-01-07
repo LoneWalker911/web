@@ -71,67 +71,6 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
 }
  mysqli_close($conn);
   ?>
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
-
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
-  <tr>
-    <td>011</td>
-    <td>Carrot</td>
-    <td>100KG</td>
-    <td>LKR 150.00</td>
-    <td>12/12/2020</td>
-    <td>Note</td>
-    <td>aaaa</td>
-
-  </tr>
 
 </table>
 
