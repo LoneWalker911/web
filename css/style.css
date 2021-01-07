@@ -9862,6 +9862,14 @@ textarea.form-control {
     padding-top: 0rem !important;
     background-color: #66cc33;
   }
+  .sidelistimg{
+    position: absolute !important;
+    left: 90% !important;
+    border-radius: 0% !important;
+  }
+  .sidelistpadding{
+    padding-bottom: 0rem !important;
+  }
 
 @-webkit-keyframes loader-rotate {
   100% {

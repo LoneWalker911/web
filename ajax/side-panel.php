@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href=".css">
+</head>
 <table style="width:25%">
   <tr>
     <td><div class="slideshow-container" style="max-width:800px">

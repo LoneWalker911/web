@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="sidelist.css">
+</head>
+<body>
+
 
     <div class="list_table">
       <table style="float:left">
@@ -48,3 +53,4 @@
 </table>
 
     </div>
+</body>
