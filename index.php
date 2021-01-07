@@ -147,7 +147,11 @@
 </div>
 </div>
 </section>
-
+<section class="ftco-sectiong">
+  <div class="container-fluid">
+    <div id="googleMap"></div>
+  </div>
+</section>
 </section>
 <section class="ftco-section ftco-project bg-light" id="projects-section">
 <div class="container px-md-5">
@@ -683,11 +687,11 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 <script src="js/aos.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/publicMap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

@@ -5,6 +5,8 @@ if (isset($_POST['submit'])){
 $uname = $_POST['username'];
 $psw = $_POST['psw'];
 
+$psw=md5($uname.$psw);
+
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
@@ -58,13 +60,15 @@ if(isset($_COOKIE['usr'])) {
       header("Location:/web/farmer");
       break;
     case "DoA":
-      echo "Your favorite color is blue!";
+      header("Location:/web/doa");
       break;
     case "Keells":
-      echo "Your favorite color is green!";
+      header("Location:/web/keells");
       break;
-    default:
-      echo "Your favorite color is neither red, blue, nor green!";
+    case "Admin":
+        header("Location:/web/admin");
+        break;
+
   }
 
     }

@@ -51,6 +51,7 @@ $psw = $_POST['psw'];
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 
+$psw = md5($nic.$psw);
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -64,11 +65,17 @@ VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $l
 $sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
 VALUES ('$nic', '$psw', 3, '$nic')";
 
-if (mysqli_query($conn, $sql)&&mysqli_query($conn, $sql2)) {
+if (mysqli_query($conn, $sql)){
+if(mysqli_query($conn, $sql2)) {
   $pass=true;
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+}
+else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
 
 mysqli_close($conn);
 }
@@ -91,7 +98,7 @@ mysqli_close($conn);
     <script>
     function timer(){
     var countDownDate = new Date().getTime()+5000;
-
+    document.getElementById("timer").style.display = "block";
     // Update the count down every 1 second
     var x = setInterval(function() {
 
@@ -103,7 +110,7 @@ mysqli_close($conn);
 
       // Time calculations for days, hours, minutes and seconds
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("timer").style.display = "block";
+
 
       // Display the result in the element with id="demo"
       document.getElementById("timer").innerHTML = "Your account has successfully created. Redirecting you to sign in page in " + seconds + "";
@@ -112,6 +119,7 @@ mysqli_close($conn);
       if (distance < 0) {
         clearInterval(x);
         document.getElementById("timer").innerHTML = "If the page did't redirect you to automatically please <a href=''>click here</a>";
+        window.location.href = "http://localhost/web/signin";
       }
     }, 1000);
     }
@@ -181,7 +189,7 @@ mysqli_close($conn);
             <br>
 
             <button class="btn btn-lg btn-warning btn-block" type="reset">Clear</button>
-            <button class="btn btn-lg btn-primary btn-block" class="submit" id="signbtn" type="submit">Submit</button>
+            <button class="btn btn-lg btn-primary btn-block" class="submit" name="submit" id="signbtn" type="submit">Submit</button>
 
         </form>
   </body>

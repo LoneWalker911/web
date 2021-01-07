@@ -4,7 +4,7 @@ if (isset($_POST['submit'])){
 $name = $_POST['name'];
 $uname = $_POST['uname'];
 $mobile = $_POST['mobile'];
-$address1 = $_POST['address'];
+$address = $_POST['address'];
 $email = $_POST['email'];
 $psw = $_POST['psw'];
 $type = $_POST['type'];
@@ -18,21 +18,24 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO staff (name, mobile, address, type, email, password)
-VALUES ('$name', '$mobile', '$address', $type '$email', '$psw')";
+$sql = "INSERT INTO staff (name, mobile, address, type, email)
+VALUES ('$name', '$mobile', '$address', $type, '$email')";
+
+if (mysqli_query($conn, $sql)) $last_id = mysqli_insert_id($conn); else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 $sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
-VALUES ('$uname', '$psw', $type, '$nic')";
+VALUES ('$uname', '$psw', $type, '$last_id')";
 
-if (mysqli_query($conn, $sql) && mysqli_query($conn, $sql2)) {
-  $pass=true;
-} else {
+if (mysqli_query($conn, $sql2)){
+  echo "<p class='pass'>User successfully added to the database.</p>";
+}else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($conn);
 }
-
  ?>
 
 <!DOCTYPE html>
@@ -65,13 +68,13 @@ mysqli_close($conn);
         xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             if(this.responseText==1){
-              document.forms["addStaff"]["uname"].disabled=true;
+              document.forms["addStaff"]["uname"].readonly=true;
               document.getElementById('chkbtn').disabled=true;
               document.getElementById('submit').disabled=false;
               document.getElementById('error').innerHTML="";
             }
             else {
-              document.forms["addStaff"]["uname"].disabled=false;
+              document.forms["addStaff"]["uname"].readonly=false;
               document.getElementById('submit').disabled=true;
               document.getElementById('chkbtn').disabled=false;
               document.getElementById('error').innerHTML="Username already exists please try again";
@@ -83,7 +86,7 @@ mysqli_close($conn);
       }
 
       function Reset(){
-        document.forms["addStaff"]["uname"].disabled=false;
+        document.forms["addStaff"]["uname"].readonly=false;
         document.getElementById('chkbtn').disabled=false;
         document.forms["addStaff"]["submit"].disabled=true;
         document.getElementById('error').innerHTML="";
@@ -137,7 +140,7 @@ mysqli_close($conn);
 
         var str = document.forms["addStaff"]["psw"].value;
         var patt = /<(.|\n)+?>/i;
-        if(!patt.test(str))
+        if(patt.test(str))
         {
           document.getElementById('error').innerHTML="Invalid password. Please try again";
           return false;
@@ -174,7 +177,7 @@ mysqli_close($conn);
       <br>
       <p id="error"></p>
       <input type="reset" name="" onclick="Reset();" value="Clear">
-      <input type="submit" id="submit" disabled name="Submit" value="submit">
+      <input type="submit" id="submit" disabled name="submit" value="Submit">
     </form>
   </body>
 </html>
