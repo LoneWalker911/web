@@ -46,6 +46,7 @@ if (mysqli_num_rows($result) > 0){
   echo "<script> if(confirm('Your session has expired. Please login again to continue')) window.location.href = 'http://localhost/web/signin';</script>";
 }
 mysqli_close($conn);
+exit;
 }
 
 if($_GET['func']=="farmer_send"){
@@ -76,6 +77,8 @@ if (mysqli_query($conn, $sql))
 else {
   echo 0;
 }
+mysqli_close($conn);
+exit;
 }
 
 if($_GET['func']=="keells_check"){
@@ -117,6 +120,77 @@ $sql = "SELECT sender,receiver,message,timestamp FROM message WHERE sender = '$i
   echo "<script> if(confirm('Your session has expired. Please login again to continue')) window.location.href = 'http://localhost/web/signin';</script>";
 }
 mysqli_close($conn);
+exit;
+}
+
+
+if($_GET['func']=="keells_contacts"){
+  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  $loginstring = htmlspecialchars($_COOKIE['usr']);
+  $uname="";
+
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+
+  $sql = "SELECT DISTINCT farmer.name,nic FROM message,farmer WHERE sender=farmer.nic OR receiver=farmer.nic  ORDER BY timestamp DESC";
+
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0){
+    while($row = mysqli_fetch_assoc($result)){
+      $id=$row['nic'];
+      echo "<div id='block' class='chat_list' onClick='test(\"".$id."\");'>";
+        echo "<div class='chat_people'>";
+          echo "<div class='chat_ib'>";
+            echo "<h5>".$row['name']."</h5>";
+            echo "<p>".$id."</p>";
+        echo  "</div></div></div>";
+    }
+  }
+  else {
+    echo "<div class='chat_list active_chat'>";
+      echo "<div class='chat_people'>";
+        echo "<div class='chat_ib'>";
+          echo "<h5>"."Database Error"."<span class='chat_date'>"."ERROR"."</span></h5>";
+          echo "<p>"."Please contact admin"."</p>";
+      echo  "</div></div>";
+  }
+
+
+mysqli_close($conn);
+exit;
+}
+
+if($_POST['func']=="keells_send"){
+$loginstring = htmlspecialchars($_COOKIE['usr']);
+$uname="";
+$rec=$_POST['rec'];
+$msg = $_POST['message'];
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql1 = "SELECT username FROM login WHERE loginstring = '$loginstring'";
+
+$result = mysqli_query($conn, $sql1);
+if (mysqli_num_rows($result) > 0){
+  $row = mysqli_fetch_assoc($result);
+  $uname = $row['username'];
+}
+
+$sql = "INSERT INTO message (sender, receiver, message)
+VALUES ('$uname','$rec', '$msg')";
+
+if (mysqli_query($conn, $sql))
+{
+  echo 1;
+}
+else {
+  echo 0;
+}
 }
 
  ?>

@@ -1,4 +1,10 @@
-function checkMsg(id) {
+var id="";
+var temp="";
+var arr = [];
+
+function test(th){
+  id=th;
+  console.log("RUN"+id+" "+temp);
   var xhttp;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -6,7 +12,40 @@ function checkMsg(id) {
         document.getElementById('msgs').innerHTML=this.responseText;
     }
   };
-  xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keels_check&id=" + id, true);
+  xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_check&id=" + id, true);
+  xmlhttp.send();
+  arr.map((a) => {
+    clearInterval(a);
+    arr = [];
+  })
+  checkMsg();
+}
+
+function checkMsg() {
+  temp=id;
+  arr.push(setInterval(function() {
+    console.log("RUN"+id+" "+temp);
+    var xhttp;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById('msgs').innerHTML=this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_check&id=" + id, true);
+    xmlhttp.send();
+  },3000));
+}
+
+function fetchContacts() {
+  var xhttp;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById('srcdiv').innerHTML=this.responseText;
+    }
+  };
+  xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=keells_contacts", true);
   xmlhttp.send();
 }
 
@@ -18,12 +57,14 @@ function sendMsg() {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         document.getElementById('msg').value="";
-        checkMsg();
+        checkMsg(usrid);
     }
   };
-  xmlhttp.open("GET", "//localhost/web/ajax/messageprocess.php?func=farmer_send&message=" + message, true);
-  xmlhttp.send();
+  xmlhttp.open("POST", "//localhost/web/ajax/messageprocess.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("func=keells_send&message=" + message +"&rec="+usrid);
 }}
 
-checkMsg();
-//setInterval(function() {checkMsg();}, 3000);
+
+fetchContacts();
+setInterval(function() {fetchContacts();}, 3000);
