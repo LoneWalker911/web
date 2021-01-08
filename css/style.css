@@ -9864,13 +9864,40 @@ textarea.form-control {
   }
   .sidelistimg{
     position: absolute !important;
-    left: 90% !important;
+    left: 100% !important;
     border-radius: 0% !important;
   }
   .sidelistpadding{
     padding-bottom: 0rem !important;
   }
+  .sidepanelcss{
+    width: auto !important;
+    height: 300px !important;
+    border: 0px !important;
+    border-radius: 0px !important;
 
+  }
+  .w3-display-left,.w3-display-right  {
+    top: 25% !important;
+  }
+  .rbtn{
+    background: #DC143C !important;
+  }
+  .mbtn{
+    background:#00BFFF !important;
+  }
+  .harvestdetail{
+    color: #006400 !important;
+    font-weight:bold !important;
+    font-size: 20px !important;
+  }
+  .farname{
+    font-size: 32px !important;
+    font-weight: bold !important;
+  }
+  .w3icon{
+    color: #0000FF !important;
+  }
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
