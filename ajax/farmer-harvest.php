@@ -27,7 +27,7 @@ while($row = mysqli_fetch_assoc($result)) {
  echo   "<td>".$date."</td>";
  echo   "<td></td> ";//FLAG
  if(strtotime($row['expiry_timestamp']) < time()){
-   echo "<td><p class='text-danger'>Expired</p></td>";
+   echo "<tdc lass='text-danger'>Expired</td>";
  }
  else if($row['status']=="Purchased"){
    echo "<td><p class='text-success'>Purchased</p></td>";

@@ -106,7 +106,7 @@ window.onclick = function(event) {
 }
 
 function fetchTable() {
-  document.getElementById('table').innerHTML="<tbody><tr><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th><th></th></tr><tr><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td><td></td> <td></td></tr></tbody>";
+  document.getElementById('table').innerHTML="<tbody><tr><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th><th>Loading...</th>Loading...<th>Loading...</th></tr><tr><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td><td>Loading...</td></tr></tbody>";
   var xhttp;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
