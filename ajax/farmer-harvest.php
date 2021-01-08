@@ -25,7 +25,7 @@ while($row = mysqli_fetch_assoc($result)) {
  echo   "<td>".$row['qty']."kg</td>";
  echo   "<td>LKR ".$row['price']."</td>";
  echo   "<td>".$date."</td>";
- echo   "<td></td> ";//FLAG
+ echo   "<td>-</td> ";//FLAG
  if(strtotime($row['expiry_timestamp']) < time()){
    echo "<tdc lass='text-danger'>Expired</td>";
  }
@@ -34,6 +34,9 @@ while($row = mysqli_fetch_assoc($result)) {
  }
  else if($row['status']=="Removed"){
    echo "<td><p class='text-danger'>Removed</p></td>";
+ }
+ else if($row['status']=="Rejected"){
+   echo "<td><p class='text-danger'>Rejected</p></td>";
  }
  else
  {

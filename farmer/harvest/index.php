@@ -49,7 +49,7 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
       <p>Are you sure you want to delete your report?</p>
 
       <div id="deldiv" class="clearfix">
-      
+
       </div>
     </div>
   </form>
@@ -57,8 +57,6 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
 
   <br>
 <table id="table">
-
-
 
 </table>
 <script type="text/javascript" src="process.js">
