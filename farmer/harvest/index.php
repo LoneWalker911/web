@@ -4,6 +4,9 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style media="screen">
+      button {box-shadow: none !important;}
+    </style>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,55 +27,42 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
 
   </ul>
 
+  <div id="edit" class="modal">
 
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <form id="details">
+
+      </form>
+
+
+      </form>
+    </div>
+
+  </div>
+
+  <div id="del" class="modal1 del">
+  <span onclick="document.getElementById('del').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal1-content">
+    <div class="container-mo">
+      <h1>Delete Report</h1>
+      <p>Are you sure you want to delete your report?</p>
+
+      <div id="deldiv" class="clearfix">
+      
+      </div>
+    </div>
+  </form>
+</div>
 
   <br>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Harvest Type</th>
-    <th>Quantity</th>
-    <th>Listed Price</th>
-    <th>Listed Date</th>
-    <th>Flag</th>
-    <th></th>
-  </tr>
-  <?php
- $conn = mysqli_connect($servername, $username, $password, $dbname);
+<table id="table">
 
- $sql = "SELECT harvest.id, crop.crop_type, trim(qty_kg)+0 AS qty, price, flag_code, date FROM harvest,crop WHERE farmer_id='$login_username' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC,farmer_id";
- $result = mysqli_query($conn, $sql);
- if (mysqli_num_rows($result) > 0) {
 
- while($row = mysqli_fetch_assoc($result)) {
-   $date = date("d/m/Y", strtotime($row["date"]));
-   echo "<tr>";
-   echo   "<td>".$row['id']."</td>";
-   echo   "<td>".$row['crop_type']."</td>";
-   echo   "<td>".$row['qty']."KG</td>";
-   echo   "<td>LKR ".$row['price']."</td>";
-   echo   "<td>".$date."</td>";
-   echo   "<td></td> ";//FLAG
-   echo   "<td class='btn-group' role='group'><button type='button' onClick='Edit(".$row['id'].");' class='btn btn-outline-primary'>Edit</button>"."";
-   echo   "<button type='button' onClick='Remove(".$row['id'].");' class='btn btn-danger'>Remove</button>"."</td>";
-   }
- }
- else {
-   echo "<tr>
-     <td>NOTHING</td>
-     <td>TO</td>
-     <td>SEE</td>
-     <td>HERE</td>
-     <td></td>
-     <td></td>
-     <td></td>
-
-   </tr>";
-}
- mysqli_close($conn);
-  ?>
 
 </table>
+<script type="text/javascript" src="process.js">
 
+</script>
   </body>
 </html>
