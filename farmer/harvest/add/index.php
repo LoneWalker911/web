@@ -1,4 +1,6 @@
-<?php include '../../../cookiechk.php';
+<?php
+error_reporting(0);
+include '../../../cookiechk.php';
 if($user_type!="Farmer") header("Location:/web/signin");
 ?>
 <!DOCTYPE html>
