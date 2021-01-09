@@ -19,15 +19,7 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
     <title></title>
   </head>
   <body>
-    <ul class="nav1">
 
-      <li class="a"><a class="nav" href="../harvest/add">Add-harvest</a></li>
-      <li class="a"><a class="nav" href="#">report</a></li>
-      <img src="https://essstr.blob.core.windows.net/uiimg/keellslogo.png" width="60%">
-      <li class="a"><a class="nav" href="#">transaction</a></li>
-      <li class="a"><a class="nav" href="#">message</a></li>
-
-  </ul>
 
   <br>
 <table class="table">

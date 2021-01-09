@@ -183,12 +183,13 @@ a.nav:hover:after ,a.signin:hover:after{
 }
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 100% !important;
 }
 
 th, td {
   text-align: left;
-  padding: 8px;
+  padding: 20px;
+  /* position: relative !important; */
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
@@ -196,4 +197,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 th {
   background-color: #4CAF50;
   color: white;
+}
+ .harvestbtn{
+  position: absolute !important;
+  /* overflow: auto !important; */
 }

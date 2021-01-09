@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) > 0) {
     <th>Listed Price</th>
     <th>Listed Date</th>
     <th>Flag</th>
-    <th>Status</th>
+     <th>Status</th>
   </tr>";
 while($row = mysqli_fetch_assoc($result)) {
  $date = date("d/m/Y", strtotime($row["date"]));
@@ -40,8 +40,9 @@ while($row = mysqli_fetch_assoc($result)) {
  }
  else
  {
- echo   "<td class='btn-group' role='group'><button type='button'onClick='Edit(".$row['id'].");' class='btn btn-outline-primary'>Edit</button>"."";
- echo   "<button type='button' onClick='Remove(".$row['id'].");' class='btn btn-outline-danger'>Remove</button>"."</td></tr>";}
+ echo   "<td class='harvestbtn' role='group'><button style='width:80px' type='button'onClick='Edit(".$row['id'].");' class='btn btn-outline-primary'>Edit</button>"."";
+
+ echo   "<button style='width:80px' type='button' onClick='Remove(".$row['id'].");' class='btn btn-outline-danger'>Remove</button>"."</td></tr>";}
  }
 }
 else {
