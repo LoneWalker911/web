@@ -17,6 +17,9 @@
 .slide2{
   padding-left: 53%;
 }
+.havbtn{
+  font-size:10px !important;
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9906,8 +9909,8 @@ textarea.form-control {
   }
   #over_map{
     position: absolute !important;
-    top: 100px !important;
-    left: 30px !important;
+    top: 0px !important;
+    left: -6px !important;
     z-index: 99 !important;
     height: 200px !important;
   }
@@ -9915,6 +9918,7 @@ textarea.form-control {
 .image-parent {
   max-width: 80px;
 }
+
 
 @-webkit-keyframes loader-rotate {
   100% {

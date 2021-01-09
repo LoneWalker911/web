@@ -21,7 +21,7 @@ if($user_type!="Farmer") {header("Location:/web/$login_username");}
   <div id="edit" class="modal">
 
     <div class="modal-content">
-      <span class="close-modal">&times;</span>
+      <span class="close-modal"></span>
       <form id="details">
 
       </form>
