@@ -1,4 +1,7 @@
-<?php require '../../dbcon.php'; ?><!DOCTYPE html>
+<?php require '../../dbcon.php';
+
+
+?><!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
@@ -34,13 +37,9 @@
           </div>
         </div></div></div>
         <script src="msg.js"></script>
-        <?php // the message
-$msg = "First line of text\nSecond line of text";
-
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-mail("thisara.gunathilaka@gmail.com","My subject",$msg); ?>
+        <?php if(isset($_REQUEST['nic']))
+        {
+          echo "<script>test(".$_REQUEST['nic'].");</script>";
+        } ?>
   </body>
 </html>

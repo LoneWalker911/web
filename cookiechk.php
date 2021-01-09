@@ -1,6 +1,7 @@
 <?php
   require 'dbcon.php';
   if(isset($_COOKIE['usr'])) {
+
     $string=$_COOKIE['usr'];
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $sql = "SELECT login.username,user_type.type,loginstring,exptime FROM login,user_type WHERE loginstring='$string' AND login.user_type_id=user_type.id";
@@ -14,20 +15,20 @@
     if((double)$row['exptime']<time())
     {
       setcookie("usr", "", time() - 1800, "/");
-      header("Location:/web/signin");
+      header("Location:/web/signin?ref=".$url);
     }
       }
     }
     else{
       setcookie("usr", "", time() - 1800, "/");
-      header("Location:/web/signin");
+      header("Location:/web/signin?ref=".$url);
     }
 
 
     mysqli_close($conn);
   }
   else {
-    header("Location:/web/signin");
+    header("Location:/web/signin?ref=".$url);
   }
 
  ?>

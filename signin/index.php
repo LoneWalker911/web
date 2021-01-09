@@ -1,5 +1,8 @@
 <?php
 require '../dbcon.php';
+if(isset($_GET['ref'])){
+  $ref=$_GET['ref'];
+}
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (isset($_POST['submit'])){
 $uname = $_POST['username'];
@@ -34,6 +37,9 @@ if($row['1']==1)
   }while(!$pass);
     if ($pass) {
       setcookie("usr", $randomString, time() + (86400 * 30), "/");
+      if(isset($ref)){
+        header("Location:".$ref);exit;
+      }
       header("Location:/web/signin");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -57,15 +63,27 @@ if(isset($_COOKIE['usr'])) {
   {
     switch ($row['type']) {
     case "Farmer":
+    if(isset($ref)){
+      header("Location:".$ref);exit;
+    }
       header("Location:/web/farmer");
       break;
     case "DoA":
+    if(isset($ref)){
+      header("Location:".$ref);exit;
+    }
       header("Location:/web/doa");
       break;
     case "Keells":
+    if(isset($ref)){
+      header("Location:".$ref);exit;
+    }
       header("Location:/web/keells");
       break;
     case "Admin":
+    if(isset($ref)){
+      header("Location:".$ref);exit;
+    }
         header("Location:/web/admin");
         break;
 
@@ -89,10 +107,15 @@ if(isset($_COOKIE['usr'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../forms.css">
     <title></title>
-
+<?php if(isset($ref)){
+  $acurl=htmlspecialchars($_SERVER["PHP_SELF"]."?ref=".$ref);
+}
+else {
+  $acurl=htmlspecialchars($_SERVER["PHP_SELF"]);
+} ?>
   </head>
   <body>
-    <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <form class="form-signin" action="<?php echo htmlspecialchars($acurl);?>" method="post">
 
       <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
       <label for="inputEmail" class="sr-only">National ID / Username</label>

@@ -2,17 +2,17 @@ var id="";
 var temp="";
 var arr = [];
 const messages = document.getElementById('msgs');
+var nic="";
+
 
 function test(th){
   id=th;
-  console.log("RUN"+id+" "+temp);
   var xhttp;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       if(document.getElementById('msgs').innerHTML!=this.responseText)
-        { console.log(document.getElementById('msgs').innerHTML);
-          document.getElementById('msgs').innerHTML=this.responseText;
+        { document.getElementById('msgs').innerHTML=this.responseText;
         scrollToBottom();}
     }
   };
@@ -28,9 +28,7 @@ function test(th){
 
 function checkMsg() {
   temp=id;
-
   arr.push(setInterval(function() {
-    console.log("RUN"+id+" "+temp);
     var xhttp;
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
