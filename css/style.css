@@ -9932,6 +9932,13 @@ textarea.form-control {
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
 }
+.navlog{
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-bottom: 0rem !important;
+  padding-top: 0rem !important;
+  left: 100% !important;
+}
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

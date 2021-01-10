@@ -58,23 +58,6 @@ a {
   padding: 15px 20px;
   position: relative;
 }
-a:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 3px;
-  left: 50%;
-  position: absolute;
-  background: #66cc33;
-  transition: width 0.3s ease 0.3s, left 0.9s ease 0s;
-  width: 0;
-}
-a:hover:after {
-  width: 100%;
-  left: 0;
-}
-
 body{
   background-image: url("keells.jpg");
   background-size: cover;
