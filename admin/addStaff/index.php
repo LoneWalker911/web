@@ -42,9 +42,10 @@ mysqli_close($conn);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <style media="screen">
     .no-arrow {
-      -moz-appearance: textfield;
+      -moz-appearance: textfield;s
     }
     .no-arrow::-webkit-inner-spin-button {
       display: none;
@@ -148,36 +149,44 @@ mysqli_close($conn);
       }
     </script>
     <title>Add Staff</title>
+    <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/web/forms.css">
   </head>
   <body>
-    <form name="addStaff" class="form" onsubmit="return Validate();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-      <input type="radio" id="keells" name="type" value="1">
-      <label for="keells">Keells</label>
-      <input type="radio" id="DoA" name="type" value="2">
-      <label for="DoA">DoA</label>
+    <form name="addStaff" class="form-addStaff" onsubmit="return Validate();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+        <h1 class="h3 mb-3 font-weight-normal">ADD STAFF</h1>
+      <input type="radio"  id="keells" name="type" value="1">
+      <label class="sr-only" for="keells">Keells</label>
+      <input type="radio"  id="DoA" name="type" value="2">
+      <label class="sr-only" for="DoA">DoA</label>
       <br>
-      <label >Name</label>
-      <input type="text" name="name" value="" required>
+      <label class="sr-only">Name</label>
+      <input type="text" class="form-control" name="name" value="" required>
       <br>
-      <label>Username</label>
-      <input type="text" name="uname" value="" required>
-      <button type="button" id="chkbtn" onclick="unameCheck();">Check availability</button>
+
+      <label class="sr-only">Username</label>
+      <div class="aabb">
+        <input type="text" class="form-control usetext" name="uname" value="" required><span style="padding-left:31px"></span>
+        <button class="btn btn-lg btn-primary btn-block"  type="button" id="chkbtn" style="width:auto" onclick="unameCheck();">Check availability</button>
+      </div>
+
       <br>
-      <label for="mobile">Mobile</label>
-      <input class="no-arrow" type="number" pattern="[0-9]{10}" name="mobile" value="" placeholder="07xxxxxxxx" required >
+      <label for="mobile" class="sr-only">Mobile</label>
+      <input class="no-arrow form-control" type="number" pattern="[0-9]{10}" name="mobile" value="" placeholder="07xxxxxxxx" required >
       <br>
-      <label for="address">Address</label>
-      <input type="text" name="address" value="" required>
+      <label for="address" class="sr-only">Address</label>
+      <input type="text" class="form-control" name="address" value="" required>
       <br>
-      <label for="email">Email</label>
-      <input type="text" name="email" value="" placeholder="someone@email.com" required>
+      <label for="email" class="sr-only">Email</label>
+      <input type="text" class="form-control" name="email" value="" placeholder="someone@email.com" required>
       <br>
-      <label for="password">Password</label>
-      <input type="password" name="psw" value="" required>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" class="form-control" class="sr-only" name="psw" value="" required>
       <br>
       <p id="error"></p>
-      <input type="reset" name="" onclick="Reset();" value="Clear">
-      <input type="submit" id="submit" disabled name="submit" value="Submit">
+      <input type="reset" id="resbtn" class="btn btn-lg btn-warning btn-block" name="" onclick="Reset();" value="Clear">
+      <input type="submit" id="submitbtn" class="btn btn-lg btn-primary btn-block" id="submit" disabled name="submit" value="Submit">
     </form>
   </body>
 </html>

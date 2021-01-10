@@ -34,6 +34,7 @@
 <li class="nav-item"><a href="#testimony-section" class="nav-link"><span>Testimony</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+<li class="nav-item"><a href="#" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
 </ul>
 </div>
 </div>
