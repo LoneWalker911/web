@@ -53,9 +53,9 @@ while($row = mysqli_fetch_assoc($result)) {
  }
  else
  {
- echo   "<td class='harvestbtn' role='group'><button style='width:80px' type='button'onClick='Edit(".$row['id'].");' class='btn btn-outline-primary'>Edit</button>"."";
+ echo   "<td class='harvestbtn' role='group'><button style='width:50px' type='button'onClick='Edit(".$row['id'].");' class='btn btn-outline-primary havbtn'>Edit</button>"."";
 
- echo   "<button style='width:80px' type='button' onClick='Remove(".$row['id'].");' class='btn btn-outline-danger'>Remove</button>"."</td></tr>";}
+ echo   "<button style='width:78px' type='button' onClick='Remove(".$row['id'].");' class='btn btn-outline-danger havbtn'>Remove</button>"."</td></tr>";}
  }
 }
 else {
@@ -91,7 +91,7 @@ while($row = mysqli_fetch_assoc($result)) {
  <span>(per kg)</span>
  <br>
  <div id='noti'></div>
- <br> <button type='button' id='upbtn' onclick='Update();'class='btn btn-success' name='update'>UPDATE</button>
+ <br> <button type='button' id='upbtn' onclick='Update();'class='btn btn-success clsbtn' name='update'>UPDATE</button>
  <button type='button' id='cancelbtn' onclick="."\"document.getElementById('edit').style.display='none';fetchTable();document.getElementById('details').innerHTML='';\""." class='btn btn-danger' name='close'>CLOSE</button>";
  }
 }

@@ -36,7 +36,9 @@
   cursor: pointer;
 }
 
- * {box-sizing: border-box}
+ * {box-sizing: border-box;
+
+ }
 
 /* Set a style for all buttons */
 .cab {
@@ -134,8 +136,17 @@ hr {
     width: 100%;
   }
 }
-
-
+.deltbtn1{
+  float: left !important;
+  width: 100px !important;
+}
+.deltbtn2{
+  float: right !important;
+  width: 100px !important;
+}
+.clsbtn{
+  float: right !important;
+}
 ul.nav1 {
   margin: 0 auto 0;
 

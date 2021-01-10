@@ -53,7 +53,7 @@ function Update()
 
 function Remove(id)
 {
-  document.getElementById("deldiv").innerHTML="<button onclick=\"document.getElementById('del').style.display='none';\" type=\"button\" class=\"btn-Light\">Cancel</button> <button class=\"btn-danger\" onClick=\"Delete("+ id +")\" type=\"button\">Delete</button> <br> <div id=\"msg\"></div>";
+  document.getElementById("deldiv").innerHTML="<button onclick=\"document.getElementById('del').style.display='none';\" type=\"button\" class=\"btn-Light btn deltbtn1\">Cancel</button> <button class=\"btn-danger btn deltbtn2\" onClick=\"Delete("+ id +")\" type=\"button\">Delete</button> <br> <div id=\"msg\"></div>";
   modal1.style.display = "block";
 }
 

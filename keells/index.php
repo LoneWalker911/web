@@ -155,41 +155,85 @@ if($user_type!="Keells")echo ""; else
   <div class="container-fluid">
     <div id="wrapper">
     <div id="googleMap2"></div>
-      <div  id="over_map" class="container">
-  <div class="row">
-    <div class="col-12 col-sm-8 col-lg-5">
-      <ul class="list-group">
+      <div  id="over_map" class="">
+        <div class="table" style="overflow-y:auto;height:373%;">
+  <div class="row" style="display:table-row;width:100%">
+
+      <ul class="col">
         <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="flex-column" style="font-weight:bold">
+          <div class="col" style="font-weight:bold">
             Farmer name
             <p><small><li>Beans 100kg LKR100/KG</li></small></p>
             <span class="badge badge-info badge-pill"> 2020/12/12</span>
           </div>
-          <div class="image-parent">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-fluid" alt="quixote">
+          <div class="image-parent" style="float:right">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
           </div>
         </a>
           </ul>
-    </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-sm-8 col-lg-5">
-      <ul class="list-group">
+  <div class="row" style="display:table-row;width:100%">
+
+      <ul class="col">
         <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="flex-column" style="font-weight:bold">
+          <div class="col" style="font-weight:bold">
             Farmer name
             <p><small><li>Beans 100kg LKR100/KG</li></small></p>
             <span class="badge badge-info badge-pill"> 2020/12/12</span>
           </div>
-          <div class="image-parent">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-fluid" alt="quixote">
+          <div class="image-parent" style="float:right">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
           </div>
         </a>
           </ul>
-    </div>
+  </div>
+  <div class="row" style="display:table-row;width:100%">
+
+      <ul class="col">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="col" style="font-weight:bold">
+            Farmer name
+            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
+            <span class="badge badge-info badge-pill"> 2020/12/12</span>
+          </div>
+          <div class="image-parent" style="float:right">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
+          </div>
+        </a>
+          </ul>
+  </div>
+  <div class="row" style="display:table-row;width:100%">
+
+      <ul class="col">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="col" style="font-weight:bold">
+            Farmer name
+            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
+            <span class="badge badge-info badge-pill"> 2020/12/12</span>
+          </div>
+          <div class="image-parent" style="float:right">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
+          </div>
+        </a>
+          </ul>
+  </div>
+  <div class="row" style="display:table-row;width:100%">
+
+      <ul class="col">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <div class="col" style="font-weight:bold">
+            Farmer name
+            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
+            <span class="badge badge-info badge-pill"> 2020/12/12</span>
+          </div>
+          <div class="image-parent" style="float:right">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
+          </div>
+        </a>
+          </ul>
   </div>
 </div>
-
+</div>
       </div>
   </div>
 
