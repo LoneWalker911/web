@@ -13,7 +13,7 @@ var mapProp= {
   rotateControl: false,
   fullscreenControl: false
 }
-map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
 }
 
 function info(id)
@@ -31,11 +31,11 @@ function marker(lat,lon,id)
   mark.setMap(map);
 
   google.maps.event.addListener(mark,'click',function() {
-  map.setCenter(mark.getPosition());
+  map.setCenter(new google.maps.LatLng(mark.getPosition().lat()+0.7,mark.getPosition().lng()));
   map.setZoom(9);
 
   var infowindow = new google.maps.InfoWindow({
-  content:"<p class'loading-txt'>Loading...</p>",
+  content:"<p class'text-inf'>Loading...</p>",
   //maxWidth: 200
   }
   );

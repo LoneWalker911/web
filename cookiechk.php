@@ -15,20 +15,18 @@
     if((double)$row['exptime']<time())
     {
       setcookie("usr", "", time() - 1800, "/");
-      header("Location:/web/signin?ref=".$url);
+      header("Location:/web/signin");
     }
       }
     }
     else{
       setcookie("usr", "", time() - 1800, "/");
-      header("Location:/web/signin?ref=".$url);
+      header("Location:/web/signin");
     }
-
-
     mysqli_close($conn);
   }
   else {
-    header("Location:/web/signin?ref=".$url);
+    header("Location:/web/signin");
   }
 
  ?>

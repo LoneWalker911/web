@@ -77,7 +77,8 @@ a:hover:after {
 
 body{
   background-image: url("keells.jpg");
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 h1{
   color: #228B22;

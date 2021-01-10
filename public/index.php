@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Digilab - Free Bootstrap 4 Template by Colorlib</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
-<link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="css/ionicons.min.css">
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
+  <title>Public - Keells Agri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
@@ -35,6 +37,8 @@
 </ul>
 </div>
 </div>
+<!-- <a href="signin" class="btn btn-outline-success" role="button" aria-pressed="true"><span>Signin</span></a>
+<a href="farmer/signup" class="btn btn-outline-secondary" role="button" aria-pressed="true"><span>Signup</span></a> -->
 </nav>
 <section id="home-section" class="hero">
 <h3 class="vr">Welcome to the keells agri</h3>
@@ -43,7 +47,7 @@
 <div class="overlay"></div>
 <div class="container-fluid p-0">
 <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(images/slides5.jpg);">
+<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(../images/slides5.jpg);">
 <div class="overlay"></div>
 </div>
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -61,7 +65,7 @@
 <div class="overlay"></div>
 <div class="container-fluid p-0">
 <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(images/slide31.jpg);">
+<div class="one-third order-md-last img js-fullheight slide2" style="background-image:url(../images/slide31.jpg);">
 <div class="overlay"></div>
 </div>
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -149,99 +153,23 @@
 </section>
 <section class="ftco-section">
   <div class="container-fluid">
-    <div id="googleMap"></div>
+    <div id="googleMap2"></div>
   </div>
 
 </section>
 </section>
 <section class="ftco-section ftco-project bg-light" id="projects-section">
-<div class="container px-md-5">
-<div class="row justify-content-center pb-5">
-<div class="col-md-12 heading-section text-center ftco-animate">
-<span class="subheading">Accomplishments</span>
-<h2 class="mb-4">Our Projects</h2>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12 testimonial">
-<div class="carousel-project owl-carousel">
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-1.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-2.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-3.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-4.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-5.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-6.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="container-fluid">
+
+      <?php include "../charts/index.php"; ?>
+
+  </div>
 </section>
 <section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
 <div class="container">
 <div class="row d-flex">
 <div class="col-md-6 col-lg-5 d-flex">
-<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/akka.jpg);">
+<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(../images/akka.jpg);">
 </div>
 </div>
 <div class="col-md-6 col-lg-7 pl-lg-5 py-5">
@@ -281,7 +209,7 @@
 <div class="col-md-6 col-lg-3 ftco-animate">
 <div class="staff">
 <div class="img-wrap d-flex align-items-stretch">
-<div class="img align-self-stretch" style="background-image: url(images/staff-1.jpg);"></div>
+<div class="img align-self-stretch" style="background-image: url(../images/staff-1.jpg);"></div>
 </div>
 <div class="text d-flex align-items-center pt-3 text-center">
 <div>
@@ -302,7 +230,7 @@
 <div class="col-md-6 col-lg-3 ftco-animate">
 <div class="staff">
 <div class="img-wrap d-flex align-items-stretch">
-<div class="img align-self-stretch" style="background-image: url(images/staff-2.jpg);"></div>
+<div class="img align-self-stretch" style="background-image: url(../images/staff-2.jpg);"></div>
 </div>
 <div class="text d-flex align-items-center pt-3 text-center">
 <div>
@@ -323,7 +251,7 @@
 <div class="col-md-6 col-lg-3 ftco-animate">
 <div class="staff">
 <div class="img-wrap d-flex align-items-stretch">
-<div class="img align-self-stretch" style="background-image: url(images/staff-3.jpg);"></div>
+<div class="img align-self-stretch" style="background-image: url(../images/staff-3.jpg);"></div>
 </div>
 <div class="text d-flex align-items-center pt-3 text-center">
 <div>
@@ -344,7 +272,7 @@
 <div class="col-md-6 col-lg-3 ftco-animate">
 <div class="staff">
 <div class="img-wrap d-flex align-items-stretch">
-<div class="img align-self-stretch" style="background-image: url(images/staff-4.jpg);"></div>
+<div class="img align-self-stretch" style="background-image: url(../images/staff-4.jpg);"></div>
 </div>
 <div class="text d-flex align-items-center pt-3 text-center">
 <div>
@@ -377,7 +305,7 @@
 <div class="carousel-testimony owl-carousel ftco-owl">
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_1.jpg)">
+<div class="user-img" style="background-image: url(../images/person_1.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -391,7 +319,7 @@
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_2.jpg)">
+<div class="user-img" style="background-image: url(../images/person_2.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -405,7 +333,7 @@
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -419,7 +347,7 @@
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_4.jpg)">
+<div class="user-img" style="background-image: url(../images/person_4.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -433,7 +361,7 @@
 </div>
  <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -462,7 +390,7 @@
 <div class="row d-flex">
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry justify-content-end">
-<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_1.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -488,7 +416,7 @@
 </div>
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry justify-content-end">
-<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_2.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -575,7 +503,7 @@
 <span class="icon-paper-plane"></span>
 </div>
 <h3 class="mb-4">Email Address</h3>
-<p><a href="/cdn-cgi/l/email-protection#8ee7e0e8e1cef7e1fbfcfde7faeba0ede1e3"><span class="__cf_email__" data-cfemail="89e0e7efe6c9f0e6fcfbfae0fdeca7eae6e4">[email&#160;protected]</span></a></p>
+<p><span class="__cf_email__">[email&#160;protected]</span></a></p>
 </div>
 </div>
 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -659,7 +587,7 @@
 <ul>
 <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-<li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__" data-cfemail="5d34333b321d2432282f3932303c3433733e3230">[email&#160;protected]</span></span></a></li>
+<li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__">[email&#160;protected]</span></span></a></li>
 </ul>
 </div>
 </div>
@@ -668,7 +596,7 @@
 <div class="row">
 <div class="col-md-12 text-center">
 <p>
-Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Colorlib
 </p>
 </div>
 </div>
@@ -676,26 +604,26 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 </footer>
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="js/publicMap.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-migrate-3.0.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.stellar.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/aos.js"></script>
+<script src="../js/jquery.animateNumber.min.js"></script>
+<script src="../js/scrollax.min.js"></script>
+<script src="../js/publicMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
+<script src="../js/google-map.js"></script>
+<script src="../js/main.js"></script>
 
 <script>
 <?php
-require 'dbcon.php';
+require '../dbcon.php';
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
@@ -715,12 +643,5 @@ mysqli_close($conn);
 ?>
 </script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-</script>
 </body>
 </html>

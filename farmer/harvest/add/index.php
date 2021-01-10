@@ -1,7 +1,8 @@
 <?php
 error_reporting(0);
 include '../../../cookiechk.php';
-if($user_type!="Farmer") header("Location:/web/signin");
+//if($user_type!="Farmer") header("Location:/web/signin");
+include 'process.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

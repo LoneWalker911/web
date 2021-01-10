@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.gm-style-iw > button {display: none !important;}
 
 #googleMap2{
     padding-top: 50%;

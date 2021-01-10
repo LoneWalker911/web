@@ -1,5 +1,10 @@
 <?php
-// check cookie but do not redirect if a cookies is not found
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 if(isset($_COOKIE['usr'])) {
   $string=$_COOKIE['usr'];
@@ -40,16 +45,28 @@ mysqli_close($conn);
 require '../../dbcon.php';
 $pass=false;
 if (isset($_POST['submit'])){
-$nic = $_POST['nic'];
-$name = $_POST['name'];
-$mobile = $_POST['mobile'];
-$address1 = $_POST['address1'];
-$address2 = $_POST['address2'];
-$district = $_POST['district'];
-$email = $_POST['email'];
-$psw = $_POST['psw'];
-$lat = $_POST['lat'];
-$lng = $_POST['lng'];
+$nic = test_input($_POST['nic']);
+
+$exp="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/";
+if(preg_match($exp,$_POST['name']))
+$name = test_input($_POST['name']);
+else return;
+
+$mobile = test_input($_POST['mobile']);
+$address1 = test_input($_POST['address1']);
+$address2 = test_input($_POST['address2']);
+$district = test_input($_POST['district']);
+$email = test_input($_POST['email']);
+
+$psw = test_input($_POST['psw']);
+
+$exp="/^\d[0-9]*.[0-9]*/";
+if(preg_match($exp,$_POST['lat'])&&preg_match($exp,$_POST['lng'])){
+$lat = test_input($_POST['lat']);
+$lng = test_input($_POST['lng']);}
+else return;
+
+
 
 $psw = md5($nic.$psw);
 
@@ -60,20 +77,15 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO farmer (nic, name, mobile, address1, address2, email, lat, lng, district)
-VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district)";
-
-$sql2 = "INSERT INTO login (username, password, user_type_id, user_id)
+VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district); INSERT INTO login (username, password, user_type_id, user_id)
 VALUES ('$nic', '$psw', 3, '$nic')";
 
-if (mysqli_query($conn, $sql)){
-if(mysqli_query($conn, $sql2)) {
+
+if (mysqli_query($conn, $sql)&&mysqli_affected_rows($conn)>0){
   $pass=true;
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
 }
 else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  $pass=false;
 }
 
 
@@ -84,12 +96,12 @@ mysqli_close($conn);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Farmer Registration</title>
+    <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
+    <title>Farmer Registration - Keells Agri</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../forms.css">
     <script type="text/javascript" src="map.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=initMap&libraries=&v=weekly"
       defer
@@ -128,12 +140,12 @@ mysqli_close($conn);
   <body>
     <p id="timer" style="display:none;"></p>
     <?php if($pass) echo "<script>timer();</script>"; ?>
-    <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <form class="form-signin" name="upform" onsubmit="return validate();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
 
             <label for="inputEmail" class="sr-only">National ID</label>
-            <input type="text" placeholder="National ID" name="nic" class="form-control" required>
+            <input type="text" placeholder="National ID" name="nic" class="form-control" required autofocus>
             <br>
 
             <label for="inputFname" class="sr-only">Full Name</label>
@@ -172,7 +184,7 @@ mysqli_close($conn);
             <br>
             <br>
             <label for="inputemail" class="sr-only">E-mail</label>
-            <input type="text" placeholder="someone@gmail.com" name="email" class="form-control" required>
+            <input type="text" placeholder="someone@gmail.com" name="email" class="form-control">
             <br>
 
             <input id="lat" type="hidden" name="lat" value="">
@@ -192,5 +204,24 @@ mysqli_close($conn);
             <button class="btn btn-lg btn-primary btn-block" class="submit" name="submit" id="signbtn" type="submit">Submit</button>
 
         </form>
+        <script type="text/javascript">
+          function validate()
+          {
+            var x = document.getElementById('lat').value;
+            if (x == "") {
+              alert("A location must be selected");
+              return false;
+            }
+            var x = document.getElementById('password').value;
+            var y = document.getElementById('confpassword').value;
+            if (x != y) {
+              alert("Unmached passwords.");
+              return false;
+            }
+            var patt = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+            if(!patt.test(document.forms["upform"]["name"].value))
+            return false;
+          }
+        </script>
   </body>
 </html>
