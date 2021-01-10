@@ -46,7 +46,7 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
     <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
     <li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
     <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
-    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/farmer#contact-section" class="nav-link"><span>Contact</span></a></li>
     </ul>
     </div>
     </div>
@@ -57,6 +57,7 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
   <thead>
     <tr>
       <th class="text-center" scope="col">ID</th>
+      <th class="text-center" scope="col">Harvest ID</th>
       <th class="text-center" scope="col">Harvest Type</th>
       <th class="text-center" scope="col">Quantity</th>
       <th class="text-center" scope="col">Listed Price</th>
@@ -71,7 +72,7 @@ $loginString=htmlspecialchars($_COOKIE['usr']);
     require '../../dbcon.php';
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    $sql = "SELECT transaction.id, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE farmer_id=login.username AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
+    $sql = "SELECT transaction.id, harvest.id AS hid, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE farmer_id=login.username AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
@@ -80,6 +81,7 @@ $loginString=htmlspecialchars($_COOKIE['usr']);
      $tdate = date("d/m/Y h:i:s A", strtotime($row["tdate"]));
      echo "<tr class=\"text-center\">";
      echo   "<th class=\"text-center\" scope=\"row\">".$row['id']."</th>";
+     echo   "<th class=\"text-center\" scope=\"row\">".$row['hid']."</th>";
      echo   "<td class=\" text-center\">".$row['crop_type']."</td>";
      echo   "<td class=\" text-center\">".$row['qty']."kg</td>";
      echo   "<td class=\" text-center\">LKR ".$row['hprice']."</td>";

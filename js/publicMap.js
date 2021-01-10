@@ -16,15 +16,6 @@ var mapProp= {
 map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
 }
 
-function info(id)
-{
-  //php server-> SELECT INFO WHERE ID = id -> info[30];
-
-  var output="<h1 class='title'>info[0].toString();</h1>";
-
-  return output;
-}
-
 function marker(lat,lon,id)
 {
   var mark=new google.maps.Marker({position: new google.maps.LatLng(lat, lon)});

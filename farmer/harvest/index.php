@@ -27,24 +27,24 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
     <link rel="stylesheet" href="../../css/icomoon.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="farmer.css">
-    <title></title>
+    <title>My Reports - Farmer - Keells Agri</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
     <div class="container">
-    <a class="navbar-brand" href="//localhost/web"><span>KEELLS</span>AGRI-FARMER</a>
+    <a class="navbar-brand" href="/web/public"><span>KEELLS</span>AGRI-FARMER</a>
     <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oi oi-menu"></span> Menu
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class="navbar-nav nav ml-auto">
-    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-    <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
-    <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
-    <li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
+    <li class="nav-item"><a href="/web/farmer#home-section" class="nav-link"><span>Home</span></a></li>
+    <li class="nav-item"><a href="/web/farmer#services-section" class="nav-link"><span>Services</span></a></li>
+    <li class="nav-item"><a href="/web/farmer#chart-section" class="nav-link"><span>Analatics</span></a></li>
+    <li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
+    <li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
     <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
-    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+    <li class="nav-item"><a href="/web/farmer#contact-section" class="nav-link"><span>Contact</span></a></li>
     </ul>
     </div>
     </div>

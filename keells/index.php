@@ -1,11 +1,11 @@
 <?php include '../cookiechk.php';
-if($user_type!="Keells")echo ""; else
+//if($user_type!="Keells")header("Location:/web/signin");
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Digilab - Free Bootstrap 4 Template by Colorlib</title>
+<title>Staff - Keells Agri</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -157,83 +157,10 @@ if($user_type!="Keells")echo ""; else
     <div id="googleMap2"></div>
       <div  id="over_map" class="">
         <div class="table" style="overflow-y:auto;height:373%;">
-  <div class="row" style="display:table-row;width:100%">
-
-      <ul class="col">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="col" style="font-weight:bold">
-            Farmer name
-            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
-            <span class="badge badge-info badge-pill"> 2020/12/12</span>
-          </div>
-          <div class="image-parent" style="float:right">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
-          </div>
-        </a>
-          </ul>
-  </div>
-  <div class="row" style="display:table-row;width:100%">
-
-      <ul class="col">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="col" style="font-weight:bold">
-            Farmer name
-            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
-            <span class="badge badge-info badge-pill"> 2020/12/12</span>
-          </div>
-          <div class="image-parent" style="float:right">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
-          </div>
-        </a>
-          </ul>
-  </div>
-  <div class="row" style="display:table-row;width:100%">
-
-      <ul class="col">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="col" style="font-weight:bold">
-            Farmer name
-            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
-            <span class="badge badge-info badge-pill"> 2020/12/12</span>
-          </div>
-          <div class="image-parent" style="float:right">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
-          </div>
-        </a>
-          </ul>
-  </div>
-  <div class="row" style="display:table-row;width:100%">
-
-      <ul class="col">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="col" style="font-weight:bold">
-            Farmer name
-            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
-            <span class="badge badge-info badge-pill"> 2020/12/12</span>
-          </div>
-          <div class="image-parent" style="float:right">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
-          </div>
-        </a>
-          </ul>
-  </div>
-  <div class="row" style="display:table-row;width:100%">
-
-      <ul class="col">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          <div class="col" style="font-weight:bold">
-            Farmer name
-            <p><small><li>Beans 100kg LKR100/KG</li></small></p>
-            <span class="badge badge-info badge-pill"> 2020/12/12</span>
-          </div>
-          <div class="image-parent" style="float:right">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-thumbnail" alt="quixote">
-          </div>
-        </a>
-          </ul>
-  </div>
+<?php include "../navbar/sidelist.php" ?>
 </div>
 </div>
+<div id="side-list">
       </div>
   </div>
 
@@ -653,7 +580,7 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 
 <script>
 <?php
-require 'dbcon.php';
+require '../dbcon.php';
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
@@ -671,14 +598,6 @@ if (mysqli_num_rows($result) > 0){
 mysqli_close($conn);
 
 ?>
-</script>
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
 </script>
 </body>
 </html>

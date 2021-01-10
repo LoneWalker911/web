@@ -1,11 +1,3 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="sidelist.css">
-</head>
-<body>
-
-
-    <div class="list_table">
-      <table style="float:left">
         <?php
         require '../dbcon.php';
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -14,7 +6,7 @@
           die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "SELECT harvest.id,farmer.nic,district.district,crop.crop_type,qty_kg,price,picture_1,date FROM harvest, crop, district,farmer WHERE harvest.crop_type_id=crop.id AND harvest.farmer_id=farmer.nic AND farmer.district=district.id AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
+        $sql = "SELECT harvest.id,farmer.nic,farmer.name,crop.crop_type,qty_kg,price,picture_1,date FROM harvest, crop,farmer WHERE harvest.crop_type_id=crop.id AND harvest.farmer_id=farmer.nic AND  harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
 
         $result = mysqli_query($conn, $sql);
         $temp_id="";
@@ -26,8 +18,9 @@
         $picdiv="";
         if (mysqli_num_rows($result) > 0){
           while($row = mysqli_fetch_assoc($result)) {
+
             if($temp_id==$row["nic"]){
-               $cropdiv .= "<li>".$row['crop_type']." ".$row['qty_kg']."KG Rs:".$row['price']."/KG</li><br>";
+               $cropdiv .= "<p><small><li>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
               continue;
             }
             else {
@@ -36,13 +29,17 @@
             $pic = $row['picture_1'];
             $date = date("d.m.y", strtotime($row["date"]));
             $temp_id=$row["nic"];
-            $districtdiv = "<tr><td><div class='Farmer_name'><span>".$row['district']."</span></div><br><div class='Harvest'><ul>";
-              $cropdiv="<li>".$row['crop_type']." ".$row['qty_kg']."KG Rs:".$row['price']."/KG</li><br>";
-              $datediv="</ul><div class='listed_date'><span>Listed on $date</span></div>
-              </div></td>";
-              $picdiv="<td><div class='list_image'><img src='".$pic."'></div></td>
-            </tr>
-            <tr>";
+            $districtdiv = "<div class=\"row\" style=\"display:table-row;width:100%\"><ul class=\"col\">
+              <a  class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\">
+                <div class=\"col\" style=\"font-weight:bold\">".$row['name'];
+              $cropdiv="<p><small><li>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
+              $datediv="<span class=\"badge badge-info badge-pill\"> ".$date."</span>
+            </div>";
+              $picdiv="<div class=\"image-parent\" style=\"float:right\"><img src=\"".$pic."\" class=\"img-thumbnail\" alt=\"quixote\">
+              </div>
+            </a>
+              </ul>
+      </div>";
           }
           $output .= $districtdiv.$cropdiv.$datediv.$picdiv;
           echo $output;

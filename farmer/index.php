@@ -24,7 +24,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
 <div class="container">
-<a class="navbar-brand" href="//localhost/web"><span>KEELLS</span>AGRI-FARMER</a>
+<a class="navbar-brand" href="/web/public"><span>KEELLS</span>AGRI-FARMER</a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="oi oi-menu"></span> Menu
 </button>
@@ -32,9 +32,9 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <ul class="navbar-nav nav ml-auto">
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
-<li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
+<li class="nav-item"><a href="#chart-section" class="nav-link"><span>Analatics</span></a></li>
+<li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
+<li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 </ul>
@@ -159,7 +159,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 
 </section>
 </section>
-<section class="ftco-section ftco-project bg-light" id="projects-section">
+<section class="ftco-section ftco-project bg-light" id="chart-section">
   <div class="container-fluid">
 
       <?php include "../charts/index.php"; ?>
@@ -179,7 +179,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <div class="carousel-testimony owl-carousel ftco-owl">
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_1.jpg)">
+<div class="user-img" style="background-image: url(../images/person_1.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -193,7 +193,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_2.jpg)">
+<div class="user-img" style="background-image: url(../images/person_2.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -207,7 +207,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -221,7 +221,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_4.jpg)">
+<div class="user-img" style="background-image: url(../images/person_4.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -235,7 +235,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 </div>
  <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -264,7 +264,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <div class="row d-flex">
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry justify-content-end">
-<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_1.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -316,7 +316,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 </div>
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry">
-<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_3.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
