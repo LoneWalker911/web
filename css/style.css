@@ -9877,7 +9877,7 @@ textarea.form-control {
   }
   .sidepanelcss{
     width: auto !important;
-    height: 300px !important;
+    height: 200px !important;
     border: 0px !important;
     border-radius: 0px !important;
 
@@ -9893,15 +9893,17 @@ textarea.form-control {
   }
   .harvestdetail{
     color: #006400 !important;
-    font-weight:bold !important;
-    font-size: 20px !important;
+    font-size: 15px !important;
   }
   .farname{
-    font-size: 32px !important;
+    font-size: 20px !important;
     font-weight: bold !important;
   }
   .w3icon{
     color: #1E90FF !important;
+  }
+  .panelcontact{
+    font-size: 15px !important;
   }
   #wrapper{
     position: relative !important;
@@ -9918,8 +9920,17 @@ textarea.form-control {
 .image-parent {
   max-width: 80px;
 }
-
-
+.btnbuy,.btncls{
+  width: 100px !important;
+}
+.btncls{s
+  float: right !important;
+}
+.panelbtn{
+  width: 30% !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

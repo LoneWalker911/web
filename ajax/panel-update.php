@@ -89,12 +89,12 @@ while($row = mysqli_fetch_assoc($result)) {
  <input type='number' id='qty' required name='qty' min='1' max='".$row["qty"]."' step='.1'> <span>kg (Max. ".$row["qty"]."kg)</span><br>
  <label for='price'>Price</label>
  <span>Rs.</span>
- <input type='number' id='price'  required name='price' min='1' value='' step='.01'>
+ <input type='number' id='price'  required name='price' min='1' value='' step='.01'>s
  <span>(per kg)</span>
  <br>
  <div id='noti'></div>
- <br> <button type='button' id='upbtn' onclick='CnfBuy();'class='btn btn-primary' name='update'>BUY</button>
- <button type='button' id='cancelbtn' onclick="."\"document.getElementById('edit').style.display='none';fetchTable();document.getElementById('details').innerHTML='';\""." class='btn btn-danger' name='close'>CLOSE</button>";
+ <br> <button type='button' id='upbtn' onclick='CnfBuy();'class='btn btn-primary btnbuy' name='update'>BUY</button>
+ <button type='button' id='cancelbtn' onclick="."\"document.getElementById('edit').style.display='none';fetchTable();document.getElementById('details').innerHTML='';\""." class='btn btn-danger btncls' name='close'>CLOSE</button>";
  }
 }
 else {

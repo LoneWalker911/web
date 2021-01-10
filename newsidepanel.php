@@ -1,7 +1,7 @@
 <?php
-$url = "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//$url = "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 require 'cookiechk.php';
-if(!isset($_REQUEST['id'])) exit;
+//if(!isset($_REQUEST['id'])) exit;
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,12 +26,13 @@ if(!isset($_REQUEST['id'])) exit;
     <title></title>
   </head>
   <body>
-    <div class="item" style="width:30%">
-<div class="testimony-wrap text-center py-4 pb-5">
+
+    <div class=" item ">
+<div class="testimony-wrap text-center py-4 pb-5 ">
       <?php
       require 'dbcon.php';
       $conn = mysqli_connect($servername, $username, $password, $dbname);
-      $id = htmlspecialchars($_GET['id']);
+      $id = 2;
 
       if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
@@ -90,18 +91,18 @@ if(!isset($_REQUEST['id'])) exit;
       <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
       <div class="text px-4 pb-5">
       <p class="name farname"><?php echo $name; ?></p>
-      <p class="mb-4"><li class="harvestdetail" style="font-size:1vw" ><?php echo $crop; ?><span style="padding-left:3rem";></span> <?php echo $qty; ?>kg  <span style="padding-left:3rem";></span>  LKR:<?php echo $price; ?>/KG</li></p>
-      <p class="name"><i class="material-icons w3icon">&#xe55f;</i><?php echo $address; ?></p>
-      <p class="name"><i class="material-icons w3icon">&#xe551;</i><?php echo $mobile; ?></p>
+      <p class="mb-4"><li class="harvestdetail" style="font-size:5px" ><?php echo $crop; ?><span style="padding-left:3rem";></span> <?php echo $qty; ?>kg  <span style="padding-left:3rem";></span>  LKR:<?php echo $price; ?>/KG</li></p>
+      <p class="name panelcontact"><i class="material-icons w3icon ">&#xe55f;</i><?php echo $address; ?></p>
+      <p class="name panelcontact"><i class="material-icons w3icon ">&#xe551;</i><?php echo $mobile; ?></p>
       <br>
-      <span class="position" style="font-style:italic">Listed on:<?php echo $date; ?></span>
+      <span class="position panelcontact" style="font-style:italic">Listed on:<?php echo $date; ?></span>
       <br>
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
       <br><br>
       <div class="icon">
-        <img onclick="updateFlag(3)" class="redflag" src="images/redflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(2)" class="yellflag" src="images/yellowflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(1)" class="greenflag" src="images/greenflag.png" style="width:50px;height:60px;">
+        <img onclick="updateFlag(3)" class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
+        <img onclick="updateFlag(2)" class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
+        <img onclick="updateFlag(1)" class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
         <?php
         switch ($flag) {
           case '1':
@@ -126,17 +127,18 @@ if(!isset($_REQUEST['id'])) exit;
            </p>
       </div>
       <br>
-      <a onclick="reject();" class="btn btn-primary px-4 py-3 rbtn" style="width:150px">Reject</a>
-      <a onClick="openMsg();" class="btn btn-primary px-4 py-3 mbtn" style="width:150px">Message</a>
-      <a onclick="Buy();" class="btn btn-primary px-4 py-3" style="width:150px">Buy</a>
+      <a onclick="reject();" class="btn btn-primary px-4 py-3 rbtn panelbtn">Reject</a>
+      <a onClick="openMsg();" class="btn btn-primary px-4 py-3 mbtn panelbtn">Message</a>
+      <a onclick="Buy();" class="btn btn-primary px-4 py-3 panelbtn">Buy</a>
       </div>
       </div>
-    </div>
+
+      </div>
 
     <div id="edit" class="modal">
 
       <div class="modal-content">
-        <span class="close-modal">&times;</span>
+
         <form id="details">
 
         </form>
@@ -151,7 +153,7 @@ if(!isset($_REQUEST['id'])) exit;
 var slideIndex = 1;
 showDivs(slideIndex);
 var modal = document.getElementById("edit");
-var span = document.getElementsByClassName("close-modal")[0];
+
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
@@ -240,8 +242,8 @@ function Buy()
         "<input type='text' value='Loading...'> <span>kg (Min. 1kg)</span> <br>"+
         "<label>Price</label> "+
         "<span>Rs.</span> <input type='text' value='Loading...' > <span>(per kg)</span><br><div id='noti'></div><br>"+
-        "<button type='button' class='btn btn-primary'>BUY</button> "+
-        "<button type='button' class='btn btn-danger' >CLOSE</button>";
+        "<button type='button' class='btn btn-primary btnbuy'>BUY</button> "+
+        "<button type='button' class='btn btn-danger btncls' >CLOSE</button>";
   var xhttp;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {

@@ -18,6 +18,10 @@ if($user_type!="Keells")echo ""; else
 <link rel="stylesheet" href="../css/ionicons.min.css">
 <link rel="stylesheet" href="../css/flaticon.css">
 <link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../css/side-panel-style.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -152,7 +156,7 @@ if($user_type!="Keells")echo ""; else
 </div>
 </section>
 <section class="ftco-section">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div id="wrapper">
     <div id="googleMap2"></div>
       <div  id="over_map" class="">
@@ -235,7 +239,14 @@ if($user_type!="Keells")echo ""; else
 </div>
 </div>
       </div>
-  </div>
+  </div> -->
+<div class="row">
+  <div class="col-sm-4 item"><?php include "../newsidepanel.php" ?></div>
+
+  <div class="col-sm-8"><div id="googleMap2"></div></div>
+
+</div>
+
 
 </section>
 </section>
