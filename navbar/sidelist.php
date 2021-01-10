@@ -19,6 +19,9 @@
         if (mysqli_num_rows($result) > 0){
           while($row = mysqli_fetch_assoc($result)) {
 
+
+
+
             if($temp_id==$row["nic"]){
                $cropdiv .= "<p><small><li>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
               continue;

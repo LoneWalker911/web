@@ -36,7 +36,8 @@ if (!$conn) {
 }
 
 
-$sql = "UPDATE harvest,login SET status='Rejected' WHERE Status != 'Purchased' AND login.user_type_id=1 AND login.loginstring='$loginString' AND harvest.id=$id";
+$sql = "UPDATE harvest,login SET status='Rejected' WHERE (status IS NULL OR status <> 'Purchased') AND login.user_type_id=1 AND login.loginstring='$loginString' AND harvest.id=$id";
+
 
 if (mysqli_query($conn, $sql))
 {
