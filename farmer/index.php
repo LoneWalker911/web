@@ -1,12 +1,13 @@
 <?php include '../cookiechk.php';
-if($user_type!="Farmer")echo "FALSE"; else
+if($user_type!="Farmer") header("Location:/web/signin");
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Digilab - Free Bootstrap 4 Template by Colorlib</title>
+<title>Farmer - Keells Agri</title>
 <meta charset="utf-8">
+<link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
 <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
@@ -23,7 +24,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
 <div class="container">
-<a class="navbar-brand" href="index.html"><span>KEELLS</span>AGRI-FARMER</a>
+<a class="navbar-brand" href="/web/public"><span>KEELLS</span>AGRI-FARMER</a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="oi oi-menu"></span> Menu
 </button>
@@ -31,9 +32,9 @@ if($user_type!="Farmer")echo "FALSE"; else
 <ul class="navbar-nav nav ml-auto">
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>My Reports</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>Transactions</span></a></li>
+<li class="nav-item"><a href="#chart-section" class="nav-link"><span>Analatics</span></a></li>
+<li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
+<li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 </ul>
@@ -153,93 +154,17 @@ if($user_type!="Farmer")echo "FALSE"; else
 </section>
 <section class="ftco-section">
   <div class="container-fluid">
-    <div id="googleMap"></div>
+    <div id="googleMap2"></div>
   </div>
 
 </section>
 </section>
-<section class="ftco-section ftco-project bg-light" id="projects-section">
-<div class="container px-md-5">
-<div class="row justify-content-center pb-5">
-<div class="col-md-12 heading-section text-center ftco-animate">
-<span class="subheading">Accomplishments</span>
-<h2 class="mb-4">Our Projects</h2>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12 testimonial">
-<div class="carousel-project owl-carousel">
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-1.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-2.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-3.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-4.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-5.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="project">
-<div class="img">
-<img src="images/project-6.jpg" class="img-fluid" alt="Colorlib Template">
-<div class="text px-4">
-<h3><a href="#">Work Name</a></h3>
-<span>Web Design</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section class="ftco-section ftco-project bg-light" id="chart-section">
+  <div class="container-fluid">
+
+      <?php include "../charts/index.php"; ?>
+
+  </div>
 </section>
 
 <section class="ftco-section testimony-section" id="testimony-section">
@@ -254,7 +179,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 <div class="carousel-testimony owl-carousel ftco-owl">
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_1.jpg)">
+<div class="user-img" style="background-image: url(../images/person_1.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -268,7 +193,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_2.jpg)">
+<div class="user-img" style="background-image: url(../images/person_2.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -282,7 +207,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -296,7 +221,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 </div>
 <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_4.jpg)">
+<div class="user-img" style="background-image: url(../images/person_4.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -310,7 +235,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 </div>
  <div class="item">
 <div class="testimony-wrap text-center py-4 pb-5">
-<div class="user-img" style="background-image: url(images/person_3.jpg)">
+<div class="user-img" style="background-image: url(../images/person_3.jpg)">
 <span class="quote d-flex align-items-center justify-content-center">
 <i class="icon-quote-left"></i>
 </span>
@@ -339,7 +264,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 <div class="row d-flex">
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry justify-content-end">
-<a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_1.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -391,7 +316,7 @@ if($user_type!="Farmer")echo "FALSE"; else
 </div>
 <div class="col-md-4 d-flex ftco-animate">
 <div class="blog-entry">
-<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+<a href="single.html" class="block-20" style="background-image: url('../images/image_3.jpg');">
 </a>
 <div class="text mt-3 float-right d-block">
 <div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -572,7 +497,7 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 
 <script>
 <?php
-require 'dbcon.php';
+require '../dbcon.php';
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {

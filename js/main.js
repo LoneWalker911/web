@@ -220,6 +220,14 @@
 	};
 	scrollWindow();
 
+  $('.ftco-project').waypoint(function() {
+    chart.render();
+    chart2.render();
+    chart3.render();
+    chart4.render();
+}, {
+    offset: '100%'
+});
 
 
 	var counter = function() {

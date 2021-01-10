@@ -17,6 +17,5 @@ function initMap() {
     document.getElementById('lat').value=mapsMouseEvent.latLng.lat();
     document.getElementById('lng').value=mapsMouseEvent.latLng.lng();
 
-
   });
 }
