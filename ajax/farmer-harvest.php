@@ -30,10 +30,10 @@ while($row = mysqli_fetch_assoc($result)) {
      echo   "<td><img src=\"//localhost/web/images/greenflag.png\" style=\"max-width: 17%;height: auto; \" class=\"img\" alt=\"Green Flag\"></td> ";
      break;
    case 2:
-     echo   "<td><img src=\"//localhost/web/images/yellowflag.png\" style=\"max-width: 17%;height: auto; \" class=\"img\" alt=\"Green Flag\"></td> ";
+     echo   "<td><img src=\"//localhost/web/images/yellowflag.png\" style=\"max-width: 17%;height: auto; \" class=\"img\" alt=\"Yellow Flag\"></td> ";
      break;
    case 3:
-     echo   "<td><img src=\"//localhost/web/images/redflag.png\" style=\"max-width: 17%;height: auto; \" class=\"img\" alt=\"Green Flag\"></td> ";
+     echo   "<td><img src=\"//localhost/web/images/redflag.png\" style=\"max-width: 17%;height: auto; \" class=\"img\" alt=\"Red Flag\"></td> ";
      break;
 
    default:echo "<td> - </td>";

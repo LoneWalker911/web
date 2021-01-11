@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 require '../../cookiechk.php';
-if($user_type!="Farmer") {header("Location:/web/signin");}
+if($user_type!="Keells") {header("Location:/web/signin");}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,9 +26,9 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
     <link rel="stylesheet" href="../../css/ionicons.min.css">
     <link rel="stylesheet" href="../../css/flaticon.css">
     <link rel="stylesheet" href="../../css/icomoon.css">
-    <link rel="stylesheet" type="text/css" href="farmer.css">
+    <link rel="stylesheet" type="text/css" href="keells.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="/web/css/style.css">
     <title>Transactions - Farmer - Keells Agri</title>
   </head>
   <body>
@@ -43,7 +43,7 @@ if($user_type!="Farmer") {header("Location:/web/signin");}
     <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
     <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
     <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
-    <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>Reports</span></a></li>
     <li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
     <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
     <li class="nav-item"><a href="//localhost/web/farmer#contact-section" class="nav-link"><span>Contact</span></a></li>
@@ -72,7 +72,7 @@ $loginString=htmlspecialchars($_COOKIE['usr']);
     require '../../dbcon.php';
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    $sql = "SELECT transaction.id, harvest.id AS hid, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE harvest.id=transaction.harvest_id AND farmer_id=login.username AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
+    $sql = "SELECT transaction.id, harvest.id AS hid, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE harvest.id=transaction.harvest_id AND 1=login.user_type_id AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
@@ -102,29 +102,11 @@ $loginString=htmlspecialchars($_COOKIE['usr']);
       echo   "<tr>";
     }
     mysqli_close($conn);
-    exit;
      ?>
 
   </tbody>
 
 
 </table>
-<script type="text/javascript" src="process.js"></script>
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery-migrate-3.0.1.min.js"></script>
-<script src="../../js/popper.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/jquery.easing.1.3.js"></script>
-<script src="../../js/jquery.waypoints.min.js"></script>
-<script src="../../js/jquery.stellar.min.js"></script>
-<script src="../../js/owl.carousel.min.js"></script>
-<script src="../../js/jquery.magnific-popup.min.js"></script>
-<script src="../../js/aos.js"></script>
-<script src="../../js/jquery.animateNumber.min.js"></script>
-<script src="../../js/scrollax.min.js"></script>
-<script src="../../js/publicMap.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-<script src="../../js/google-map.js"></script>
-<script src="../../js/main.js"></script>
   </body>
 </html>
