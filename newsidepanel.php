@@ -28,7 +28,9 @@ require 'cookiechk.php';
   <body>
 
     <div class=" item ">
+
 <div class="testimony-wrap text-center py-4 pb-5 ">
+  <span class="close">&times;</span>
       <?php
       require 'dbcon.php';
       $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -60,6 +62,7 @@ require 'cookiechk.php';
           $date = date("d/m/Y", strtotime($row["date"]));
         }
       }
+
       $img="";
       if($pic1!="")
       {
@@ -87,6 +90,7 @@ require 'cookiechk.php';
       ?>
 
       </div>
+
       <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
       <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
       <div class="text px-4 pb-5">

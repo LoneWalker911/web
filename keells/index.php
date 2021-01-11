@@ -157,24 +157,38 @@
 </div>
 </section>
 <section class="ftco-section">
-  <!-- <div class="container-fluid">
+  <div class="container-fluid">
     <div id="wrapper">
     <div id="googleMap2"></div>
       <div  id="over_map" class="">
         <div class="table" style="overflow-y:auto;height:373%;">
-<?php include "../navbar/sidelist.php" ?>
+          <div id="side-list" >
+                  <?php include "../newsidepanel.php" ?>
+                </div>
 </div>
 </div>
-<div id="side-list">
-      </div>
-  </div> -->
-<div class="row">
+
+  </div>
+<!-- <div class="row">
   <div class="col-sm-4 item"><?php include "../newsidepanel.php" ?></div>
 
   <div class="col-sm-8"><div id="googleMap2"></div></div>
 
+</div> -->
+
+<!--
+<div class="container-fluid">
+  <div id="wrapper">
+  <div id="googleMap2"></div>
+    <div  id="over_map" class="">
+      <div class="table" style="overflow-y:auto;height:373%;">
+        <div id="side-list">
+              <?php //include "../navbar/sidelist.php" ?>
+              </div>
+</div>
 </div>
 
+</div> -->
 
 </section>
 </section>
