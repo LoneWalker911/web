@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/side-panel-style.css">
     <title></title>
   </head>
@@ -245,8 +242,8 @@ function Buy()
         "<input type='text' value='Loading...'> <span>kg (Min. 1kg)</span> <br>"+
         "<label>Price</label> "+
         "<span>Rs.</span> <input type='text' value='Loading...' > <span>(per kg)</span><br><div id='noti'></div><br>"+
-        "<button type='button' class='btn btn-primary btnbuy'>BUY</button> "+
-        "<button type='button' class='btn btn-danger btncls' >CLOSE</button>";
+        "<button type='button' class='btn btn-primary btnbuy '>BUY</button> "+
+        "<button type='button' style='float: right'  class='btn btn-danger btncls modbuy' >CLOSE</button>";
   var xhttp;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {

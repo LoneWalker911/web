@@ -58,7 +58,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <span class="subheading">Welcome to the keells agri</span>
 <h1 class="mb-4 mt-3">Small Details Make A Big <span>Impression</span></h1>
 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
-<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
+<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
 </div>
 </div>
 </div>
@@ -76,7 +76,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <span class="subheading">Welcome to the keells agri</span>
 <h1 class="mb-4 mt-3"><span>Strategic</span> Design And <span>Technology</span> Agency</h1>
 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
-<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Get in touch</a></p>
+<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
 </div>
 </div>
 </div>

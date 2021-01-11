@@ -4665,7 +4665,7 @@ a.close.disabled {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
+  width: 30%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
@@ -4685,6 +4685,7 @@ a.close.disabled {
     opacity: 0; }
   .modal-backdrop.show {
     opacity: 0.5; }
+
 
 .modal-header {
   display: -webkit-box;
@@ -9936,7 +9937,7 @@ textarea.form-control {
 .btnbuy,.btncls{
   width: 100px !important;
 }
-.btncls{s
+.btncls{
   float: right !important;
 }
 .panelbtn{
@@ -9947,13 +9948,14 @@ textarea.form-control {
 .navlog{
   padding-left: 1rem !important;
   padding-right: 1rem !important;
-  padding-bottom: 0rem !important;
+  padding-bottom: 0rem !impsortant;
   padding-top: 0rem !important;
   left: 100% !important;
 }
 .upimage{
   padding-top: 0rem !important;
 }
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);

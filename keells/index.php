@@ -1,4 +1,6 @@
 <?php include '../cookiechk.php';
+//if($user_type!="Keells")header("Location:/web/signin");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,14 +167,7 @@
                 </div>
 </div>
 </div>
-
   </div>
-<!-- <div class="row">
-  <div class="col-sm-4 item"><?php //include "../newsidepanel.php" ?></div>
-
-  <div class="col-sm-8"><div id="googleMap2"></div></div>
-
-</div> -->
 
 <!--
 <div class="container-fluid">
@@ -185,15 +180,91 @@
               </div>
 </div>
 </div>
-
 </div> -->
-</div>
-</section>
 
+</section>
+</section>
 <section class="ftco-section ftco-project bg-light" id="projects-section">
 <div class="container px-md-5">
-  <div class="container-fluid">
-  <?php include "../charts/index.php"; ?>
+<div class="row justify-content-center pb-5">
+<div class="col-md-12 heading-section text-center ftco-animate">
+<span class="subheading">Accomplishments</span>
+<h2 class="mb-4">Our Projects</h2>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12 testimonial">
+<div class="carousel-project owl-carousel">
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-1.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-2.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-3.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-4.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-5.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="project">
+<div class="img">
+<img src="images/project-6.jpg" class="img-fluid" alt="Colorlib Template">
+<div class="text px-4">
+<h3><a href="#">Work Name</a></h3>
+<span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -521,32 +592,30 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 <script src="../js/jquery.animateNumber.min.js"></script>
 <script src="../js/scrollax.min.js"></script>
 <script src="publicMap.js"></script>
-<script src="../js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-
 <script src="../js/google-map.js"></script>
-
+<script src="../js/main.js"></script>
 
 <script>
-//
-// require '../dbcon.php';
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
-//
-// if (!$conn) {
-//   die("Connection failed: " . mysqli_connect_error());
-// }
-//
-// $sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
-//
-// $result = mysqli_query($conn, $sql);
-// if (mysqli_num_rows($result) > 0){
-//   while($row = mysqli_fetch_assoc($result)) {
-//     echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
-//   }
-// }
-// mysqli_close($conn);
-//
-// ?>
+<?php
+require '../dbcon.php';
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
+
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0){
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
+  }
+}
+mysqli_close($conn);
+
+?>
 </script>
 </body>
 </html>

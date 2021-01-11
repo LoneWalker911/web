@@ -38,7 +38,7 @@ header('Pragma: no-cache'); // Date in the past
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
 <li class="nav-item"><a href="#chart-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
+<li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>Reports</span></a></li>
 <li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li><br>
