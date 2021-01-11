@@ -6621,7 +6621,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-  padding-top: 1.5rem !important; }
+  padding-top: 0rem; }
 
 .pr-4,
 .px-4 {
@@ -9878,13 +9878,25 @@ textarea.form-control {
   }
   .sidepanelcss{
     width: auto !important;
-    height: 200px !important;
+    height: 243px !important;
     border: 0px !important;
     border-radius: 0px !important;
-
   }
+  .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
   .w3-display-left,.w3-display-right  {
-    top: 25% !important;
+    top: 17% !important;
   }
   .rbtn{
     background: #DC143C !important;
@@ -9938,6 +9950,9 @@ textarea.form-control {
   padding-bottom: 0rem !important;
   padding-top: 0rem !important;
   left: 100% !important;
+}
+.upimage{
+  padding-top: 0rem !important;
 }
 @-webkit-keyframes loader-rotate {
   100% {
