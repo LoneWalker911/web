@@ -1,5 +1,5 @@
 <?php include '../cookiechk.php';
-if($user_type!="Farmer")echo "FALSE"; else
+if($user_type!="Keells")echo "FALSE"; else
 
 ?>
 <!DOCTYPE html>

@@ -4,9 +4,7 @@ require '../cookiechk.php';
 if(!isset($_REQUEST['id'])) exit;
  ?>
  <head>
-   <script type="text/javascript">
-     console.log("HHFF");
-   </script>
+
  </head>
 
     <link rel="stylesheet" href="/web/css/side-panel-style.css">
@@ -84,9 +82,9 @@ if(!isset($_REQUEST['id'])) exit;
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
       <br><br>
       <div class="icon">
-        <img onclick="updateFlag(3)" <?php if($flag=="1") echo"id=\"greenflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
+        <img onclick="updateFlag(3)" <?php if($flag=="1") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
         <img onclick="updateFlag(2)" <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(1)" <?php if($flag=="3") echo"id=\"redflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
+        <img onclick="updateFlag(1)" <?php if($flag=="3") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
            <br>
            <span id="ff"></span>
            </p>
@@ -115,20 +113,3 @@ if(!isset($_REQUEST['id'])) exit;
     var slideIndex = 1;
     showDivs(slideIndex);
     </script>
-
-      <?php switch ($flag) {
-        case '1':
-          echo "<script type=\"text/javascript\">
-            document.getElementsByClassName('greenflag')[0].id=\"greenflag\";
-          </script>";
-          break;
-        case '2':
-          // echo "<script type=\"text/javascript\">
-          //   document.getElementsByClassName('yellflag')[0].id=\"yellflag\";</script>";
-          break;
-        case '3':
-          echo "<script type=\"text/javascript\">
-            document.getElementsByClassName('redflag')[0].id=\"redflag\";
-          </script>";
-          break;
-        } ?>

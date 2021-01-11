@@ -158,10 +158,14 @@ if($user_type!="Keells")header("Location:/web/signin");
 </section>
 <section class="ftco-section">
 
-<?php include "../navbar/sidelist.php" ?>
+
 
 <div class="row">
-  <div class="col-sm-4 item" id="side"></div>
+  <div class="col-sm-4 item">
+<div id="side"></div>
+
+<div class="" id="list"> <?php include "../navbar/sidelist.php" ?> </div>
+  </div>
 
   <div class="col-sm-8"><div id="googleMap2"></div></div>
 

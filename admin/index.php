@@ -1,5 +1,5 @@
 <?php include '../cookiechk.php';
-if($user_type!="Admin") header("Location:/web/signin");
+if($user_type!="Keells") header("Location:/web/signin");
 
 ?>
 <!DOCTYPE html>
