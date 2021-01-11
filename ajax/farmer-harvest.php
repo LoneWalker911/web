@@ -1,4 +1,5 @@
 <?php
+require '../cookiechk.php';
 require '../dbcon.php';
 $loginString = htmlspecialchars($_COOKIE['usr']);
 

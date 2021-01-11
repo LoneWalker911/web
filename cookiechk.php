@@ -25,7 +25,7 @@
     }
     mysqli_close($conn);
   }
-  else {
+  else if($_COOKIE['usr']=""){
     header("Location:/web/signin");
   }
 

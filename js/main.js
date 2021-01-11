@@ -3,6 +3,20 @@
  	easing: 'slide'
  });
 
+ function logout()
+ {
+ var xhttp;
+ var xmlhttp = new XMLHttpRequest();
+ xmlhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+   window.location.href = "//localhost/web/signin";
+   }
+
+ };
+ xmlhttp.open("GET", "//localhost/web/ajax/logout.php", true);
+ xmlhttp.send();
+ }
+
 (function($) {
 
 	"use strict";
@@ -15,6 +29,9 @@
     hideDistantElements: false,
     scrollProperty: 'scroll'
   });
+
+
+
 
 
 	var fullHeight = function() {

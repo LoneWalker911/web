@@ -1,3 +1,6 @@
+<?php
+require '../cookiechk.php';
+ ?>
 <style media="screen">
 .chart { width: 49%; height: 500px;display: inline-block;}
 /* @media (min-width: 300px) {

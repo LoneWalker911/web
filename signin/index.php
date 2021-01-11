@@ -19,13 +19,11 @@ $psw = test_input($_POST['psw']);
 
 
 $psw=md5($uname.$psw);
-echo $psw;
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = "SELECT 1 FROM login WHERE username='$uname' AND password='$psw'";
-echo $sql;
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
 

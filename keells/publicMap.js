@@ -15,6 +15,7 @@ var mapProp= {
   fullscreenControl: false
 }
 map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+fetchMarkers();
 }
 var id;
 
@@ -38,9 +39,33 @@ function FetchSide(tid)
   xhttp.send();
 }
 
-function marker(lat,lon,id)
+function fetchMarkers()
 {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/ajax/markers.php", true);
+  xhttp.send();
+}
+
+function marker(lat,lon,id,flag)
+{
+  var flagico;
+  switch (flag) {
+    case 1:flagico="greenflag.png";break;
+    case 2:flagico="yellowflag.png";break;
+    case 3:flagico="redflag.png";break;
+    default:
+
+  }
+  var icon={url:"//localhost/web/images/"+flagico,scaledSize:new google.maps.Size(30, 30)};
   var mark=new google.maps.Marker({position: new google.maps.LatLng(lat, lon)});
+
+  mark.setIcon(icon);
   mark.setMap(map);
 
   google.maps.event.addListener(mark,'click',function() {

@@ -1,4 +1,5 @@
         <?php
+        require '../cookiechk.php';
         require '../dbcon.php';
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 

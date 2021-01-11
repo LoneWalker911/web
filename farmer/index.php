@@ -5,6 +5,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
 <title>Farmer - Keells Agri</title>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">

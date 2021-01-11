@@ -1,5 +1,9 @@
-<?php include '../cookiechk.php';
-if($user_type!="Keells") header("Location:/web/signin");
+<?php require '../cookiechk.php';
+if($user_type!="Admin") header("Location:/web/signin");
+header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache'); // Date in the past
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +42,7 @@ if($user_type!="Keells") header("Location:/web/signin");
 <li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li><br>
-<li class="nav-item"><a href="#" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
+<li class="nav-item"><a onclick="logout();" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
   <!-- <span style="padding-BlinkMacSystemFont"></span> -->
 
 </ul>

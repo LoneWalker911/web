@@ -1,4 +1,5 @@
 <?php
+require '../cookiechk.php';
 require '../dbcon.php';
 if($_GET['func']=="farmer_check"){
 $conn = mysqli_connect($servername, $username, $password, $dbname);
