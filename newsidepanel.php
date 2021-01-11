@@ -1,9 +1,6 @@
 <?php
 //$url = "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-require 'cookiechk.php';
-require '../../cookiechk.php';
-if($user_type!="Keells"||$user_type!="Admin"||$user_type!="DoA")
-exit;
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
