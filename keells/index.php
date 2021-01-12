@@ -1,9 +1,18 @@
-<?php include '../cookiechk.php';
+<?php
+include '../cookiechk.php';
+if($user_type!="Keells") {header("Location:/web/signin");}
+header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Staff - Keells Agri</title>
+<script type="text/javascript" id>
+
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -157,36 +166,17 @@
 <section class="ftco-section">
   <div class="container-fluid">
     <div id="wrapper">
-    <div id="googleMap2"></div>
+    <div id="googleMap2" onclick="FetchList();"></div>
       <div  id="over_map" class="">
         <div class="table" style="overflow-y:auto;height:373%;">
           <div id="side-list" >
-                  <?php include "../newsidepanel.php" ?>
+
                 </div>
 </div>
 </div>
 
   </div>
-<!-- <div class="row">
-  <div class="col-sm-4 item"><?php //include "../newsidepanel.php" ?></div>
 
-  <div class="col-sm-8"><div id="googleMap2"></div></div>
-
-</div> -->
-
-<!--
-<div class="container-fluid">
-  <div id="wrapper">
-  <div id="googleMap2"></div>
-    <div  id="over_map" class="">
-      <div class="table" style="overflow-y:auto;height:373%;">
-        <div id="side-list">
-              <?php //include "../navbar/sidelist.php" ?>
-              </div>
-</div>
-</div>
-
-</div> -->
 </div>
 </section>
 
@@ -407,7 +397,7 @@
 <span class="icon-paper-plane"></span>
 </div>
 <h3 class="mb-4">Email Address</h3>
-<p><a href="/cdn-cgi/l/email-protection#8ee7e0e8e1cef7e1fbfcfde7faeba0ede1e3"><span class="__cf_email__" data-cfemail="89e0e7efe6c9f0e6fcfbfae0fdeca7eae6e4">[email&#160;protected]</span></a></p>
+<p><a ><span class="__cf_email__" >[email&#160;protected]</span></a></p>
 </div>
 </div>
 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -523,30 +513,11 @@ Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/clou
 <script src="publicMap.js"></script>
 <script src="../js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-
 <script src="../js/google-map.js"></script>
 
-
 <script>
-//
-// require '../dbcon.php';
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
-//
-// if (!$conn) {
-//   die("Connection failed: " . mysqli_connect_error());
-// }
-//
-// $sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
-//
-// $result = mysqli_query($conn, $sql);
-// if (mysqli_num_rows($result) > 0){
-//   while($row = mysqli_fetch_assoc($result)) {
-//     echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
-//   }
-// }
-// mysqli_close($conn);
-//
-// ?>
+FetchMarkers();
+FetchList();
 </script>
 </body>
 </html>
