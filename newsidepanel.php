@@ -18,10 +18,7 @@ if(!isset($_REQUEST['id'])) exit;
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/side-panel-style.css">
     <style media="screen">
       .mySlides{display: none;}
@@ -134,7 +131,3 @@ if(!isset($_REQUEST['id'])) exit;
       </div>
 
     </div>
-
-<script type="text/javascript">
-
-</script>

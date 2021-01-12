@@ -2,7 +2,6 @@ var map;
 var activeInfoWindow;
 
 
-
 function mainMap() {
 var mapProp= {
   center: new google.maps.LatLng(7.85072,80.65716),
@@ -15,8 +14,8 @@ var mapProp= {
   fullscreenControl: false
 }
 map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
-fetchMarkers();
 }
+
 var id;
 
 
@@ -24,48 +23,83 @@ function FetchSide(tid)
 {
   id=tid;
   var xhttp;
-  document.getElementById("side").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  document.getElementById("side-list").innerHTML = "<p class'loading-txt'>Loading...</p>";
   if (id == 0) {
-    document.getElementById("side").innerHTML = "";
+    document.getElementById("side-list").innerHTML = "";
     return;
   }
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    document.getElementById("side").innerHTML = this.responseText;
+    document.getElementById("side-list").innerHTML = this.responseText;
+    showDivs(slideIndex);
     }
   };
-  xhttp.open("GET", "//localhost/web/ajax/side-panel.php?id="+tid, true);
+  xhttp.open("GET", "//localhost/web/newsidepanel.php?id="+tid, true);
   xhttp.send();
 }
 
-function fetchMarkers()
+function FetchList()
 {
+  var xhttp;
+  document.getElementById("side-list").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  if (id == 0) {
+    document.getElementById("side-list").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("side-list").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/navbar/sidelist.php", true);
+  xhttp.send();
+}
+
+function ClearMarkers()
+{
+  markers.forEach((item, i) => {
+    item.setMap(null);
+  });
+  markers.length=0;
+}
+
+function FetchMarkers()
+{
+  ClearMarkers();
   var xhttp;
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    this.responseText;
+    var json = JSON.parse(this.responseText);
+    console.log(json);
+    for (var i = 0; i < json.length; i++) {
+      marker (json[i]["lat"],json[i]["lng"],json[i]["nic"],json[i]["flag"]);
+    }
     }
   };
   xhttp.open("GET", "//localhost/web/ajax/markers.php", true);
   xhttp.send();
 }
 
+var markers=[];
+
 function marker(lat,lon,id,flag)
 {
   var flagico;
   switch (flag) {
-    case 1:flagico="greenflag.png";break;
-    case 2:flagico="yellowflag.png";break;
-    case 3:flagico="redflag.png";break;
-    default:
-
+    case "1":flagico="greenflag.png";break;
+    case "2":flagico="yellowflag.png";break;
+    case "3":flagico="redflag.png";break;
   }
-  var icon={url:"//localhost/web/images/"+flagico,scaledSize:new google.maps.Size(30, 30)};
+  var icon={url:"//localhost/web/images/"+flagico,scaledSize:new google.maps.Size(40, 40)};
+
   var mark=new google.maps.Marker({position: new google.maps.LatLng(lat, lon)});
 
-  mark.setIcon(icon);
+  if(flag!="") mark.setIcon(icon);
+
+
   mark.setMap(map);
 
   google.maps.event.addListener(mark,'click',function() {
@@ -92,13 +126,16 @@ function marker(lat,lon,id,flag)
 
 google.maps.event.addListener(map,'click',function() {
 activeInfoWindow.close();
+FetchMarkers();
+FetchList();
 });
+markers.push(mark);
 }
 
 
 function emptyfunc(pp){
 switch (pp) {
-case 1:document.getElementById('ff').innerHTML="<p style=\"display:inline\" class='text-success'>Updated</p>";break;
+case 1:document.getElementById('ff').innerHTML="<p style=\"display:inline\" class='text-success'>Updated</p>";FetchMarkers();break;
 case 0:document.getElementById('ff').innerHTML="<p style=\"display:inline\" class='text-danger'>Update Failed. Try Again.</p>";break;
 }
 }
@@ -204,6 +241,7 @@ if (this.readyState == 4 && this.status == 200) {
 xmlhttp.open("GET", "//localhost/web/ajax/panel-update.php?func=cnfbuy&id=" + id + "&qty=" + qty + "&price=" + price, true);
 xmlhttp.send();
 }
+var slideIndex = 1;
 
 function plusDivs(n) {
 showDivs(slideIndex += n);
