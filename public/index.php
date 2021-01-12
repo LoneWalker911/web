@@ -21,7 +21,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
 <div class="container">
-<a class="navbar-brand" href="index.html"><span>KEELLS</span>AGRI</a>
+<a class="navbar-brand" href="index.php"><span>KEELLS</span>AGRI</a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="oi oi-menu"></span> Menu
 </button>
@@ -34,9 +34,10 @@
 <li class="nav-item"><a href="#testimony-section" class="nav-link"><span>Testimony</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-<li class="nav-item"><a href="#" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
 </ul>
+<a href="#" style="float:right;"class="btn btn-primary ">Log in</a>
 </div>
+
 </div>
 <!-- <a href="signin" class="btn btn-outline-success" role="button" aria-pressed="true"><span>Signin</span></a>
 <a href="farmer/signup" class="btn btn-outline-secondary" role="button" aria-pressed="true"><span>Signup</span></a> -->
@@ -622,27 +623,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
 
+
 <script>
-<?php
-require '../dbcon.php';
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
-
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0){
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
-  }
-}
-mysqli_close($conn);
-
-?>
+FetchMarkers();
 </script>
+
 
 </body>
 </html>
