@@ -12,14 +12,16 @@ header('Pragma: no-cache');
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    <link rel="stylesheet" type="text/css" href="/web/forms.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/web/forms.css">
 
     <title>Add your harvest</title>
   </head>
   <body>
-    <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
-      <label for="crop">Crop</label>
-      <select name="crop">
+    <form class="form-add-harvest" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+      <h1 class="h3 mb-3 font-weight-normal">ADD HARVEST</h1>
+      <label for="inputcrop" class="sr-only">Select Crop Type</label>
+      <select name="crop"  class="form-control"  required>
          <?php
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -28,7 +30,7 @@ header('Pragma: no-cache');
         if (mysqli_num_rows($result) > 0) {
 
         while($row = mysqli_fetch_assoc($result)) {
-        echo "<option value=".$row['id'].">".$row['crop_type']."</option>";
+        echo "<option class='form-control'  value=".$row['id'].">".$row['crop_type']."</option>";
           }
         }
         else {
@@ -38,35 +40,36 @@ header('Pragma: no-cache');
          ?>
       </select>
       <br>
-      <label>Quantity</label>
-      <input type="number" required name="qty" min="1" value="1" step=".1"><span>kg (Min. 1kg)</span>
+      <label for="inputquantity" class="sr-only">Quantity(Min 1KG)</label>
+      <input type="number" class="form-control" required name="qty" min="1" value="1" step=".1">
       <br>
-      <label>Price</label>
-      <span>Rs.</span><input type="number" required name="price" min="1" value="0" step=".01"><span>(per kg)</span>
+      <label for="inputprice" class="sr-only">Price(LKR-PerKG)</label>
+      <input class="form-control" type="number" required name="price" min="1" value="0" step=".01">
       <br>
       Select image to upload: (3MB Max)<br>
-      <label>Picture 1</label>
-      <input required type="file" name="pic1">
+      <label class="sr-only">Picture 1</label>
+      <input required type="file" name="pic1" class="form-control" >
       <ul class="error"><?php echo $pic1error; ?></ul>
       <br>
-      <label>Picture 2</label>
-      <input type="file" name="pic2">
+      <label class="sr-only">Picture 2</label>
+      <input type="file" name="pic2" class="form-control" >
       <p class="error"><?php echo $pic2error; ?></p>
       <br>
-      <label>Picture 3</label>
-      <input type="file" name="pic3">
+      <label class="sr-only">Picture 3</label>
+      <input type="file" name="pic3" class="form-control" >
       <p class="error"><?php echo $pic3error; ?></p>
       <br>
-      <label>Picture 4</label>
-      <input type="file" name="pic4">
+      <label class="sr-only">Picture 4</label>
+      <input type="file" name="pic4" class="form-control" >
       <p class="error"><?php echo $pic4error; ?></p>
       <br>
-      <label>Picture 5</label>
-      <input type="file" name="pic5">
+      <label class="sr-only">Picture 5</label>
+      <input type="file" name="pic5" class="form-control" >
       <p class="error"><?php echo $pic5error; ?></p>
       <br>
       <p class="error"> <?php echo $formError; ?> </p>
-      <input type="submit" name="submit" value="Upload">
+      <input id="harvestcancel" class="btn btn-lg btn-warning btn-block" type="reset"  value="Reset">
+      <input id="harvestsubmitbtn" class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Submit">
     </form>
   </body>
 </html>

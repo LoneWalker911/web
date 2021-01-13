@@ -1,6 +1,9 @@
 <?php include '../cookiechk.php';
 if($user_type!="Farmer") header("Location:/web/signin");
-
+header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', FALSE);
+header('Pragma: no-cache');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +42,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-<li class="nav-item"><a href="#" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
+<li class="nav-item"><a onclick="logout();"  class="btn btn-primary">Log out</a></p>
 </ul>
 </div>
 </div>
@@ -59,7 +62,7 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <span class="subheading">Welcome to the keells agri</span>
 <h1 class="mb-4 mt-3">Fresh beacuase of <span>You</span></h1>
 <p>Farmers play a key role in this, and over the years, Keells has worked together with the farmers and the farming community to ensure the produce is the best quality from the source.</p>
-<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
+<p><a href="/web/farmer/harvest/add" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
 </div>
 </div>
 </div>
@@ -75,9 +78,9 @@ if($user_type!="Farmer") header("Location:/web/signin");
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 <div class="text">
 <span class="subheading">Welcome to the keells agri</span>
-<h1 class="mb-4 mt-3"><span>maximise </span>yield<span><br>minimise</span> wastage</h1>
+<h1 class="mb-4 mt-3"><span>Maximise </span>Yield<span><br>Minimise</span> Wastage</h1>
 <p>Best farming practices, fertiliser management and post-harvest techniques executed with the collaboration of the Department of Agriculture.</p>
-<p><a href="#" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
+<p><a href="/web/farmer/harvest/add" class="btn btn-primary px-5 py-3 mt-3">ADD HARVEST</a></p>
 </div>
 </div>
 </div>
@@ -240,9 +243,9 @@ Colombo 2, Sri Lanka.</p>
 <h2 class="ftco-heading-2">About KeellsAgri</h2>
 <p>Farmers play a key role in this, and over the years, Keells has worked together with the farmers and the farming community to ensure the produce is the best quality from the source.</p>
 <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-<li class="ftco-animate"><a href="https://twitter.com/?lang=en"><span class="icon-twitter"></span></a></li>
-<li class="ftco-animate"><a href="https://www.facebook.com/#"><span class="icon-facebook"></span></a></li>
-<li class="ftco-animate"><a href="https://www.instagram.com/"><span class="icon-instagram"></span></a></li>
+  <li class="ftco-animate"><a href="https://twitter.com/keells_sl"><span class="icon-twitter"></span></a></li>
+  <li class="ftco-animate"><a href="https://www.facebook.com/johnkeells"><span class="icon-facebook"></span></a></li>
+  <li class="ftco-animate"><a href="https://www.instagram.com/keells.sl"><span class="icon-instagram"></span></a></li>
 </ul>
 </div>
 </div>
@@ -262,11 +265,11 @@ Colombo 2, Sri Lanka.</p>
 <div class="ftco-footer-widget mb-4">
 <h2 class="ftco-heading-2">Services</h2>
 <ul class="list-unstyled">
-<li><a href="#v-pills-1"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
-<li><a href="#v-pills-2"><span class="icon-long-arrow-right mr-2"></span>Research</a></li>
-<li><a href="#v-pills-3"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
-<li><a href="#v-pills-4"><span class="icon-long-arrow-right mr-2"></span>UX/UI Design</a></li>
-<li><a href="#v-pills-5"><span class="icon-long-arrow-right mr-2"></span>Technology</a></li>
+  <li><a href="#services-section" onclick="document.getElementById('v-pills-1-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+  <li><a href="#services-section" onclick="document.getElementById('v-pills-2-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Research</a></li>
+  <li><a href="#services-section" onclick="document.getElementById('v-pills-3-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+  <li><a href="#services-section" onclick="document.getElementById('v-pills-4-tab').click();"><span class="icon-long-arrow-right mr-2"></span>UX/UI Design</a></li>
+  <li><a href="#services-section" onclick="document.getElementById('v-pills-5-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Technology</a></li>
 </ul>
 </div>
 </div>
@@ -313,34 +316,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
 
-<script>
-<?php
-require '../dbcon.php';
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
-
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0){
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
-  }
-}
-mysqli_close($conn);
-
-?>
-</script>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
+FetchMarkers();
 </script>
 </body>
 </html>

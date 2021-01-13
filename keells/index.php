@@ -10,9 +10,7 @@ header('Pragma: no-cache');
 <html lang="en">
 <head>
 <title>Staff - Keells Agri</title>
-<script type="text/javascript" id>
-
-</script>
+<link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -43,12 +41,12 @@ header('Pragma: no-cache');
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
 <li class="nav-item"><a href="#analysis-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>My Reports</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>Transactions</span></a></li>
+<li class="nav-item"><a href="/web/keells/reports" class="nav-link"><span>Reports</span></a></li>
+<li class="nav-item"><a href="/web/keells/transactions" class="nav-link"><span>Transactions</span></a></li>
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-<li class="nav-item"><a href="#" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
+<li class="nav-item"><a onclick="logout();" class="btn btn-primary">Log out</a></p>
 </ul>
 </div>
 </div>
@@ -83,7 +81,7 @@ header('Pragma: no-cache');
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 <div class="text">
 <span class="subheading">Welcome to the keells agri</span>
-<h1 class="mb-4 mt-3"><span>maximise </span>yield<span><br>minimise</span> wastage</h1>
+<h1 class="mb-4 mt-3"><span>Maximise </span>Yield<span><br>Minimise</span> Wastage</h1>
 <p>Best farming practices, fertiliser management and post-harvest techniques executed with the collaboration of the Department of Agriculture.</p>
 </div>
 </div>
@@ -145,7 +143,7 @@ header('Pragma: no-cache');
 <section class="ftco-section">
   <div class="container-fluid">
     <div id="wrapper">
-    <div id="googleMap2" onclick="FetchList();"></div>
+    <div id="googleMap2"></div>
       <div  id="over_map" class="">
         <div class="table" style="overflow-y:auto;height:373%;">
           <div id="side-list" >
@@ -326,7 +324,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/scrollax.min.js"></script>
 <script src="publicMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-<script src="../js/google-map.js"></script>
+<script src="../js/main.js"></script>
 
 <script>
 FetchMarkers();

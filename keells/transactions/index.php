@@ -33,24 +33,24 @@ header('Pragma: no-cache');
     <link rel="stylesheet" type="text/css" href="keells.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/web/css/style.css">
-    <title>Transactions - Farmer - Keells Agri</title>
+    <title>Transactions - Staff - Keells Agri</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
     <div class="container">
-    <a class="navbar-brand" href="//localhost/web"><span>KEELLS</span>AGRI-FARMER</a>
+    <a class="navbar-brand" href="//localhost/web/keells"><span>KEELLS</span>AGRI-STAFF</a>
     <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oi oi-menu"></span> Menu
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class="navbar-nav nav ml-auto">
-    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-    <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
-    <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>Reports</span></a></li>
-    <li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
+    <li class="nav-item"><a href="/web/keells#home-section" class="nav-link"><span>Home</span></a></li>
+    <li class="nav-item"><a href="/web/keells#services-section" class="nav-link"><span>Services</span></a></li>
+    <li class="nav-item"><a href="/web/keells#analysis-section" class="nav-link"><span>Analatics</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/keells/reports" class="nav-link"><span>Reports</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/keells/transactions" class="nav-link"><span>Transactions</span></a></li>
     <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
-    <li class="nav-item"><a href="//localhost/web/farmer#contact-section" class="nav-link"><span>Contact</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/keels#contact-section" class="nav-link"><span>Contact</span></a></li>
     </ul>
     </div>
     </div>

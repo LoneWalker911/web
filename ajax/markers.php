@@ -1,9 +1,8 @@
 <?php
 error_reporting(0);
 require '../dbcon.php';
-if(isset($user_type))
-{
-if($user_type=="Keells"||$user_type=="DoA")
+
+if(isset($_COOKIE['usr']))
 {
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -27,7 +26,7 @@ if (mysqli_num_rows($result) > 0){
 echo json_encode($json);
 mysqli_close($conn);
 }
-}
+
 
 
 else

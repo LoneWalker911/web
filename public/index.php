@@ -23,7 +23,7 @@
 <div class="container">
 <a class="navbar-brand" href="index.php"><span>KEELLS</span>AGRI</a>
 <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="oi oi-menu"></span> Menu
+ Menu
 </button>
 <div class="collapse navbar-collapse" id="ftco-nav">
 <ul class="navbar-nav nav ml-auto">
@@ -35,7 +35,7 @@
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <!-- <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li> -->
 </ul>
-<a href="#" style="float:right;"class="btn btn-primary ">Log in</a>
+<a href="/web/signin" class="btn btn-primary ">Log in</a>
 </div>
 
 </div>
@@ -72,7 +72,7 @@
 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 <div class="text">
 <span class="subheading">Welcome to the keells agri</span>
-<h1 class="mb-4 mt-3"><span>maximise </span>yield<span><br>minimise</span> wastage</h1>
+<h1 class="mb-4 mt-3"><span>Maximise </span>Yield<span><br>Minimise</span> Wastage</h1>
 <p>Best farming practices, fertiliser management and post-harvest techniques executed with the collaboration of the Department of Agriculture.</p>
 </div>
 </div>
@@ -205,7 +205,7 @@ Colombo 2, Sri Lanka.</p>
 <div class="align-self-stretch box p-4 text-center">
 <div class="icon d-flex align-items-center justify-content-center">
 <span class="icon-phone2"></span>
-</div>s
+</div>
 <h3 class="mb-4">Contact Number</h3>
 <p><a href="tel://1234567920">+94 11 2303500</a></p>
 </div>
@@ -240,9 +240,9 @@ Colombo 2, Sri Lanka.</p>
 <h2 class="ftco-heading-2">About KeellsAgri</h2>
 <p>Farmers play a key role in this, and over the years, Keells has worked together with the farmers and the farming community to ensure the produce is the best quality from the source.</p>
 <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-<li class="ftco-animate"><a href="https://twitter.com/?lang=en"><span class="icon-twitter"></span></a></li>
-<li class="ftco-animate"><a href="https://www.facebook.com/#"><span class="icon-facebook"></span></a></li>
-<li class="ftco-animate"><a href="https://www.instagram.com/"><span class="icon-instagram"></span></a></li>
+<li class="ftco-animate"><a href="https://twitter.com/keells_sl"><span class="icon-twitter"></span></a></li>
+<li class="ftco-animate"><a href="https://www.facebook.com/johnkeells"><span class="icon-facebook"></span></a></li>
+<li class="ftco-animate"><a href="https://www.instagram.com/keells.sl"><span class="icon-instagram"></span></a></li>
 </ul>
 </div>
 </div>
@@ -262,11 +262,11 @@ Colombo 2, Sri Lanka.</p>
 <div class="ftco-footer-widget mb-4">
 <h2 class="ftco-heading-2">Services</h2>
 <ul class="list-unstyled">
-<li><a href="#v-pills-1"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
-<li><a href="#v-pills-2"><span class="icon-long-arrow-right mr-2"></span>Research</a></li>
-<li><a href="#v-pills-3"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
-<li><a href="#v-pills-4"><span class="icon-long-arrow-right mr-2"></span>UX/UI Design</a></li>
-<li><a href="#v-pills-5"><span class="icon-long-arrow-right mr-2"></span>Technology</a></li>
+<li><a href="#services-section" onclick="document.getElementById('v-pills-1-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+<li><a href="#services-section" onclick="document.getElementById('v-pills-2-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Research</a></li>
+<li><a href="#services-section" onclick="document.getElementById('v-pills-3-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+<li><a href="#services-section" onclick="document.getElementById('v-pills-4-tab').click();"><span class="icon-long-arrow-right mr-2"></span>UX/UI Design</a></li>
+<li><a href="#services-section" onclick="document.getElementById('v-pills-5-tab').click();"><span class="icon-long-arrow-right mr-2"></span>Technology</a></li>
 </ul>
 </div>
 </div>

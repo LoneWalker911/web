@@ -50,16 +50,73 @@
     <div class="dropdown">
   <button class="dropbtn">Select the report type :</button>
   <div class="dropdown-content">
-  <a href="">Farmer</a>
-  <a href="#">Harvest</a>
-  <a href="#">Staff</a>
+  <a onclick="report1();">Farmer</a>
+  <a onclick="report2();">Harvest</a>
+  <a onclick="report3();">Staff</a>
+  <a onclick="report4();">Transactions</a>
   </div>
 </div>
-<div class="admin-table">
-    <?php include "admin-farmer.php" ?>
+<div id="table" class="admin-table">
+
 
 </div>
+<script type="text/javascript">
+function report1()
+{
+  var xhttp;
+  document.getElementById("table").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("table").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/admin/admin-farmer.php", true);
+  xhttp.send();
+}
 
+function report2()
+{
+  var xhttp;
+  document.getElementById("table").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("table").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/admin/harvest.php", true);
+  xhttp.send();
+}
+
+function report3()
+{
+  var xhttp;
+  document.getElementById("table").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("table").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/admin/staff.php", true);
+  xhttp.send();
+}
+
+function report4()
+{
+  var xhttp;
+  document.getElementById("table").innerHTML = "<p class'loading-txt'>Loading...</p>";
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("table").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "//localhost/web/admin/transaction.php", true);
+  xhttp.send();
+}
+</script>
 
 
   </body>

@@ -1,5 +1,5 @@
 <?php require '../cookiechk.php';
-if($user_type!="Keells") header("Location:/web/signin");
+if($user_type!="Admin") header("Location:/web/signin");
 header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate');
 header('Cache-Control: post-check=0, pre-check=0', FALSE);
@@ -38,12 +38,12 @@ header('Pragma: no-cache'); // Date in the past
 <ul class="navbar-nav nav ml-auto">
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-<li class="nav-item"><a href="#analysis-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="/web/farmer/harvest" class="nav-link"><span>Reports</span></a></li>
+<li class="nav-item"><a href="/web/admin/addStaff" class="nav-link"><span>Add Staff</span></a></li>
+<li class="nav-item"><a href="/web/admin/reports.php" class="nav-link"><span>Reports</span></a></li>
 <li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li><br>
-<li class="nav-item"><a onclick="logout();" class="btn btn-primary px-5 py-3 mt-3 navlog">Log out</a></p>
+<li class="nav-item"><a onclick="logout();" class="btn btn-primary">Log out</a></p>
   <!-- <span style="padding-BlinkMacSystemFont"></span> -->
 
 </ul>
@@ -143,13 +143,19 @@ header('Pragma: no-cache'); // Date in the past
 </div>
 </section>
 
-
-
 <section class="ftco-section">
   <div class="container-fluid">
+    <div id="wrapper">
     <div id="googleMap2"></div>
-  </div>
+      <div  id="over_map" class="">
+        <div class="table" style="overflow-y:auto;height:373%;">
+          <div id="side-list" >
 
+                </div>
+</div>
+</div>
+  </div>
+</div>
 </section>
 </section>
 <section class="ftco-section ftco-project bg-light" id="analysis-section">
@@ -323,7 +329,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/scrollax.min.js"></script>
 <script src="../js/publicMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
-<script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
 
 <script>
