@@ -1,8 +1,9 @@
 <?php
 error_reporting(0);
 require '../dbcon.php';
+require '../cookiechk.php';
 
-if(isset($_COOKIE['usr']))
+if($user_type=="Keells"||$user_type=="DoA")
 {
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

@@ -18,7 +18,8 @@ header('Pragma: no-cache');
   <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <meta charset="utf-8">
-    <title></title>
+    <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
+    <title>Messages - Farmer - Keells Agri</title>
   </head>
   <body>
     <div class="container-fluid" style="width:60%;">

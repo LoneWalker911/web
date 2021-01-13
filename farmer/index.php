@@ -41,7 +41,7 @@ header('Pragma: no-cache');
 <li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+<li class="nav-item"><a href="/web/messages/farmer" class="nav-link"><span>Messages</span></a></li>
 <li class="nav-item"><a onclick="logout();"  class="btn btn-primary">Log out</a></p>
 </ul>
 </div>

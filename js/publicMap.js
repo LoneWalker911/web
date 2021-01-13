@@ -120,8 +120,7 @@ function marker(lat,lon,id,flag)
       infowindow.setContent(this.responseText);
     }
   };
-  xmlhttp.open("GET", "//localhost/web/ajax/infowindow.php?id=" + id +"&indl=" + Math.floor((Math.random() * 100) + 1)
-, true);
+  xmlhttp.open("GET", "//localhost/web/ajax/infowindow.php?id=" + id +"&indl=" + Math.random(), true);
   xmlhttp.send();
 });
 
