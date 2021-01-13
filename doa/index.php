@@ -9,6 +9,7 @@ header('Pragma: no-cache');
 <html lang="en">
 <head>
 <title>DoA - Keells Agri</title>
+<link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
@@ -20,6 +21,9 @@ header('Pragma: no-cache');
 <link rel="stylesheet" href="../css/aos.css">
 <link rel="stylesheet" href="../css/ionicons.min.css">
 <link rel="stylesheet" href="../css/flaticon.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="../css/icomoon.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -35,10 +39,11 @@ header('Pragma: no-cache');
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
 <li class="nav-item"><a href="#analysis-section" class="nav-link"><span>Analatics</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>My Reports</span></a></li>
-<li class="nav-item"><a href="#" class="nav-link"><span>Transactions</span></a></li>
+<li class="nav-item"><a href="/web/keells/reports" class="nav-link"><span>Reports</span></a></li>
+<li class="nav-item"><a href="/web/keells/transactions" class="nav-link"><span>Transactions</span></a></li>
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+<li class="nav-item"><a onclick="logout();" class="btn btn-primary">Log out</a></p>
 </ul>
 </div>
 </div>
@@ -135,9 +140,18 @@ header('Pragma: no-cache');
 </div>
 </section>
 <section class="ftco-section">
-  <div class="container-fluid">s
-    <div id="googleMap"></div>
+  <div class="container-fluid">
+    <div id="wrapper">
+    <div id="googleMap2"></div>
+      <div  id="over_map" class="">
+        <div class="table" style="overflow-y:auto;height:373%;">
+          <div id="side-list" >
+
+                </div>
+</div>
+</div>
   </div>
+</div>
 </section>
 
 <section class="ftco-section ftco-project bg-light" id="analysis-section">
@@ -314,33 +328,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/main.js"></script>
 
 <script>
-<?php
-require 'dbcon.php';
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT DISTINCT farmer.nic,lat,lng FROM harvest, farmer WHERE harvest.farmer_id=farmer.nic AND harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
-
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0){
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "marker(".$row['lat'].", ".$row['lng']." , ".$row['nic']." );";
-  }
-}
-mysqli_close($conn);
-
-?>
+FetchMarkers();
+FetchList();
 </script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-23581568-13');
-</script>
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ADMIN REPORTS</title>
+    <link rel="shortcut icon" href="https://www.keellssuper.com/favicon.ico">
     <style>
 .dropbtn {
   background-color: #4CAF50;
