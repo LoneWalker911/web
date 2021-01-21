@@ -228,8 +228,10 @@ mysqli_close($conn);
               return false;
             }
             var patt = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-            if(!patt.test(document.forms["upform"]["name"].value))
+            if(!patt.test(document.forms["upform"]["name"].value.trim())){
+            document.getElementById("timer").innerHTML = "Invalid input for: Name";
             return false;
+          }
           }
         </script>
   </body>
