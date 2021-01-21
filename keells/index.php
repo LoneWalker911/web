@@ -233,7 +233,7 @@ Colombo 2, Sri Lanka.</p>
 <span class="icon-paper-plane"></span>
 </div>
 <h3 class="mb-4">Email Address</h3>
-<p><span class="__cf_email__">keellsfarmercare.jms@keells.com</span></a></p>
+<p><span class="__cf_email__" style="margin-left:-9px">keellsfarmercare.jms@keells.com</span></a></p>
 </div>
 </div>
 <div class="col-md-6 col-lg-3 d-flex ftco-animate">

@@ -138,11 +138,11 @@ mysqli_close($conn);
 </script>
   </head>
   <body>
-    <p id="timer" style="display:none;"></p>
     <?php if($pass) echo "<script>timer();</script>"; ?>
     <form class="form-signin" name="upform" onsubmit="return validate();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+            <p id="timer" class style="display:none;color:#66ccff;text-align: center;"></p>
 
             <label for="inputEmail" class="sr-only">National ID</label>
             <input type="text" placeholder="National ID" name="nic" class="form-control" required autofocus>
@@ -185,6 +185,8 @@ mysqli_close($conn);
             <br>
             <label for="inputemail" class="sr-only">E-mail</label>
             <input type="text" placeholder="someone@gmail.com" name="email" class="form-control">
+            <br>
+            <label for="inputlocation" class="sr-only">Select the location of the farm</label>
             <br>
 
             <input id="lat" type="hidden" name="lat" value="">

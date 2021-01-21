@@ -208,7 +208,7 @@ Colombo 2, Sri Lanka.</p>
 <div class="align-self-stretch box p-4 text-center">
 <div class="icon d-flex align-items-center justify-content-center">
 <span class="icon-phone2"></span>
-</div>s
+</div>
 <h3 class="mb-4">Contact Number</h3>
 <p><a href="tel://1234567920">+94 11 2303500</a></p>
 </div>
@@ -219,7 +219,7 @@ Colombo 2, Sri Lanka.</p>
 <span class="icon-paper-plane"></span>
 </div>
 <h3 class="mb-4">Email Address</h3>
-<p><span class="__cf_email__">keellsfarmercare.jms@keells.com</span></a></p>
+<p><span class="__cf_email__" style="margin-left:-9px">keellsfarmercare.jms@keells.com</span></a></p>
 </div>
 </div>
 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
