@@ -75,12 +75,12 @@ mysqli_close($conn);
             if(this.responseText==1){
               document.forms["addStaff"]["uname"].readonly=true;
               document.getElementById('chkbtn').disabled=true;
-              document.getElementById('submit').disabled=false;
+              document.getElementById('submitbtn').disabled=false;
               document.getElementById('error').innerHTML="";
             }
             else {
               document.forms["addStaff"]["uname"].readonly=false;
-              document.getElementById('submit').disabled=true;
+              document.getElementById('submitbtn').disabled=true;
               document.getElementById('chkbtn').disabled=false;
               document.getElementById('error').innerHTML="Username already exists please try again";
             }

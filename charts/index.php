@@ -110,7 +110,7 @@ while($row = mysqli_fetch_assoc($result)){
 }
 }
 
-$sql = "SELECT province.province,count(nic)/(SELECT count(nic) AS count FROM farmer)*100 AS bb FROM farmer,province,district WHERE farmer.district=district.id AND district.province=province.id GROUP BY province.province";
+$sql = "SELECT province.province,count(harvest.id)/(SELECT count(harvest.id) AS count FROM harvest)*100 AS bb FROM harvest,farmer,province,district WHERE harvest.farmer_id=farmer.nic AND farmer.district=district.id AND district.province=province.id GROUP BY province.province";
 
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {

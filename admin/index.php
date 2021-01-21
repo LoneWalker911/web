@@ -38,9 +38,8 @@ header('Pragma: no-cache'); // Date in the past
 <ul class="navbar-nav nav ml-auto">
 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-<li class="nav-item"><a href="/web/admin/addStaff" class="nav-link"><span>Add Staff</span></a></li>
+<li class="nav-item"><a href="/web/admin/addStaff" target="_blank" class="nav-link"><span>Add Staff</span></a></li>
 <li class="nav-item"><a href="/web/admin/reports.php" class="nav-link"><span>Reports</span></a></li>
-<li class="nav-item"><a href="/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
 <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li><br>
 <li class="nav-item"><a onclick="logout();" class="btn btn-primary">Log out</a></p>
