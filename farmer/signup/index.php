@@ -48,9 +48,9 @@ if (isset($_POST['submit'])){
 $nic = test_input($_POST['nic']);
 
 $exp="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/";
-if(preg_match($exp,$_POST['name']))
-$name = test_input($_POST['name']);
-else return;
+if(preg_match($exp,$_POST['name'])){
+$name = test_input($_POST['name']);}
+else {echo "name error";return;}
 
 $mobile = test_input($_POST['mobile']);
 $address1 = test_input($_POST['address1']);
@@ -64,7 +64,7 @@ $exp="/^\d[0-9]*.[0-9]*/";
 if(preg_match($exp,$_POST['lat'])&&preg_match($exp,$_POST['lng'])){
 $lat = test_input($_POST['lat']);
 $lng = test_input($_POST['lng']);}
-else return;
+else {echo "lat lng error";return;}
 
 
 
@@ -77,14 +77,21 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO farmer (nic, name, mobile, address1, address2, email, lat, lng, district)
-VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district); INSERT INTO login (username, password, user_type_id, user_id)
-VALUES ('$nic', '$psw', 3, '$nic')";
+VALUES ('$nic', '$name', '$mobile', '$address1', '$address2', '$email', $lat, $lng, $district)";
 
 
-if (mysqli_query($conn, $sql)&&mysqli_affected_rows($conn)>0){
-  $pass=true;
+if (mysqli_query($conn, $sql)){
+  $sql="INSERT INTO login (username, password, user_type_id, user_id)
+  VALUES ('$nic', '$psw', 3, '$nic')";
+  if(mysqli_query($conn, $sql))
+  {$pass=true;}
+  else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    $pass= false;
+  }
 }
 else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   $pass=false;
 }
 
@@ -138,12 +145,12 @@ mysqli_close($conn);
 </script>
   </head>
   <body>
-    <?php if($pass) echo "<script>timer();</script>"; ?>
+
     <form class="form-signin" name="upform" onsubmit="return validate();" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-            <p id="timer" class style="display:none;color:#66ccff;text-align: center;"></p>
-
+            <p id="timer" style="display:none;color:#66ccff;text-align: center;"></p>
+            <?php if($pass) echo "<script>timer();</script>"; ?>
             <label for="inputEmail" class="sr-only">National ID</label>
             <input type="text" placeholder="National ID" name="nic" class="form-control" required autofocus>
             <br>
@@ -159,7 +166,7 @@ mysqli_close($conn);
             <label for="inputaddress" class="sr-only">Address</label>
             <input type="text" placeholder="1st Line" name="address1" class="form-control" required>
             <br>
-            <input type="text" placeholder="2nd Line" name="address2" class="form-control" required>
+            <input type="text" placeholder="2nd Line" name="address2" class="form-control" >
             <br>
 
             <label for="inputdistrict" class="sr-only">District</label><br>
