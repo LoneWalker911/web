@@ -82,17 +82,17 @@ if(!isset($_REQUEST['id'])) exit;
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
       <br><br>
       <div class="icon">
-        <img onclick="updateFlag(3)" <?php if($flag=="1") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(2)" <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(1)" <?php if($flag=="3") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(3)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="1") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(2)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(1)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="3") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
            <br>
            <span id="ff"></span>
            </p>
       </div>
       <br>
-      <a onclick="reject();" class="btn btn-primary px-4 py-3 rbtn panelbtn">Reject</a>
+      <?php if($user_type=="Keells") echo "<a onclick=\"reject();\" class=\"btn btn-primary px-4 py-3 rbtn panelbtn\">Reject</a>"; ?>
       <a onClick="openMsg();" class="btn btn-primary px-4 py-3 mbtn panelbtn">Message</a>
-      <a onclick="Buy();" class="btn btn-primary px-4 py-3 panelbtn">Buy</a>
+      <?php if($user_type=="Keells") echo "<a onclick=\"Buy();\" class=\"btn btn-primary px-4 py-3 panelbtn\">Buy</a>"; ?>
       </div>
       </div>
 
