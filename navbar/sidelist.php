@@ -21,7 +21,7 @@
           while($row = mysqli_fetch_assoc($result)) {
 
             if($temp_id==$row["nic"]){
-               $cropdiv .= "<p><small><li>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
+               $cropdiv .= "<p><small><li style=\"cursor: pointer;\"  onclick=FetchSide(".$row['id'].");>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
               continue;
             }
             else {
@@ -33,7 +33,7 @@
             $districtdiv = "<div class=\"row\" style=\"display:table-row;width:100%\"><ul class=\"col\">
               <a  class=\"list-group-item list-group-item-action d-flex justify-content-between align-items-center\">
                 <div class=\"col\" style=\"font-weight:bold\">".$row['name'];
-              $cropdiv="<p><small><li onclick=FetchSide(".$row['id'].");>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
+              $cropdiv="<p><small><li style=\"cursor: pointer;\"  onclick=FetchSide(".$row['id'].");>".$row['crop_type']." ".$row['qty_kg']."kg Rs:".$row['price']."/kg</li></small></p>";
               $datediv="<span class=\"badge badge-info badge-pill\"> ".$date."</span>
             </div>";
               $picdiv="<div class=\"image-parent\" style=\"float:right\"><img src=\"".$pic."\" class=\"img-thumbnail\" alt=\"quixote\">

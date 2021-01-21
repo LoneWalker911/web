@@ -149,14 +149,6 @@ if($_GET['func']=="keells_contacts"){
         echo  "</div></div></div>";
     }
   }
-  else {
-    echo "<div class='chat_list active_chat'>";
-      echo "<div class='chat_people'>";
-        echo "<div class='chat_ib'>";
-          echo "<h5>"."Database Error"."<span class='chat_date'>"."ERROR"."</span></h5>";
-          echo "<p>"."Please contact admin"."</p>";
-      echo  "</div></div>";
-  }
 
 
 mysqli_close($conn);

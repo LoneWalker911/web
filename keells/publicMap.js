@@ -14,6 +14,10 @@ var mapProp= {
   fullscreenControl: false
 }
 map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+
+google.maps.event.addListener(map,'click',function() {
+FetchList();
+});
 }
 
 var id;
@@ -97,7 +101,7 @@ function marker(lat,lon,id,flag)
 
   var mark=new google.maps.Marker({position: new google.maps.LatLng(lat, lon)});
 
-  if(flag!="") mark.setIcon(icon);
+  if(flag!="0") mark.setIcon(icon);
 
 
   mark.setMap(map);
@@ -126,7 +130,6 @@ function marker(lat,lon,id,flag)
 
 google.maps.event.addListener(map,'click',function() {
 activeInfoWindow.close();
-FetchMarkers();
 FetchList();
 });
 markers.push(mark);

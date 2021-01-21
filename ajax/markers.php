@@ -2,7 +2,7 @@
 error_reporting(0);
 require '../dbcon.php';
 require '../cookiechk.php';
-
+$temp="";
 if($user_type=="Keells"||$user_type=="DoA")
 {
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -17,9 +17,12 @@ $json= array();
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0){
   while($row = mysqli_fetch_assoc($result)) {
+    if($temp==$row['nic'])
+    continue;
     $json[$i]->lat = $row['lat'];
     $json[$i]->lng = $row['lng'];
     $json[$i]->nic = $row['nic'];
+    $temp=$row['nic'];
     $json[$i]->flag = $row['flag_code'];
     $i+=1;
   }
@@ -44,10 +47,13 @@ $json= array();
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0){
   while($row = mysqli_fetch_assoc($result)) {
+    if($temp==$row['nic'])
+    continue;
     $json[$i]->lat = $row['lat'];
     $json[$i]->lng = $row['lng'];
     $json[$i]->nic = $row['nic'];
-    $json[$i]->flag = '';
+    $temp=$row['nic'];
+    $json[$i]->flag = '0';
     $i+=1;
   }
 }

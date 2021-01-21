@@ -9,7 +9,7 @@ if(!isset($_REQUEST['id'])) exit;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -18,7 +18,7 @@ if(!isset($_REQUEST['id'])) exit;
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" href="css/side-panel-style.css">
     <style media="screen">
       .mySlides{display: none;}
@@ -80,7 +80,7 @@ if(!isset($_REQUEST['id'])) exit;
       }
       if($pic5!="")
       {
-        $img .= "<div class=\"user-img sidepanelcss w3-display-container mySlides\" style=\"background-image: url(".$pic15.")\"></div>";
+        $img .= "<div class=\"user-img sidepanelcss w3-display-container mySlides\" style=\"background-image: url(".$pic5.")\"></div>";
       }
 
       echo $img;
@@ -101,9 +101,9 @@ if(!isset($_REQUEST['id'])) exit;
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
       <br><br>
       <div class="icon">
-        <img onclick="updateFlag(3)" <?php if($flag=="3") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(2)" <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
-        <img onclick="updateFlag(1)" <?php if($flag=="1") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(3)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="3") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(2)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(1)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="1") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
 
            <br>
            <span id="ff"></span>
