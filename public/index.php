@@ -308,7 +308,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/aos.js"></script>
 <script src="../js/jquery.animateNumber.min.js"></script>
 <script src="../js/scrollax.min.js"></script>
-<script src="../js/publicMap.js"></script>
+<script src="publicMap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6bwkbJkNfAXK0kqSVi21V7Ll0CnUzOM&callback=mainMap"></script>
 <script src="../js/google-map.js"></script>
 <script src="../js/main.js"></script>
