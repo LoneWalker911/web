@@ -1,7 +1,6 @@
 <?php
 include '../cookiechk.php';
 if($user_type!="Keells")
-if ($user_type!="DoA")
   header("Location:/web/signin");
 
 header('Expires: Sun, 01 Jan 2014 00:00:00 GMT');

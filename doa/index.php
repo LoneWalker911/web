@@ -25,6 +25,7 @@ header('Pragma: no-cache');
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="../css/side-panel-style.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">

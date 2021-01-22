@@ -9,17 +9,17 @@ if(!isset($_REQUEST['id'])) exit;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">-->
-    <link rel="stylesheet" href="css/side-panel-style.css">
+    <link rel="stylesheet" href="/web/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/web/css/animate.css">
+    <link rel="stylesheet" href="/web/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/web/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/web/css/magnific-popup.css">
+    <link rel="stylesheet" href="/web/css/aos.css">
+    <link rel="stylesheet" href="/web/css/ionicons.min.css">
+    <link rel="stylesheet" href="/web/css/flaticon.css">
+    <link rel="stylesheet" href="/web/css/icomoon.css">
+    <link rel="stylesheet" href="/web/css/style.css">
+    <link rel="stylesheet" href="/web/css/side-panel-style.css">
     <style media="screen">
       .mySlides{display: none;}
     </style>
@@ -101,18 +101,18 @@ if(!isset($_REQUEST['id'])) exit;
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
       <br><br>
       <div class="icon">
-        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(3)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="3") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
-        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(2)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
-        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(1)\""; else echo "style=\"cursor:auto;\""; ?> <?php if($flag=="1") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(3)\""; else echo "style=\"cursor:auto;width:50px;height:60px;\""; ?> <?php if($flag=="3") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(2)\""; else echo "style=\"cursor:auto;width:50px;height:60px;\""; ?> <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
+        <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(1)\""; else echo "style=\"cursor:auto;width:50px;height:60px;\""; ?> <?php if($flag=="1") echo"id=\"greenflag\""; ?> class="greenflag" src="//localhost/web/images/greenflag.png" style="width:50px;height:60px;">
 
            <br>
            <span id="ff"></span>
            </p>
       </div>
       <br>
-      <a onclick="reject();" class="btn btn-primary px-4 py-3 rbtn panelbtn">Reject</a>
+      <?php if($user_type=="Keells") echo "<a onclick=\"reject();\" class=\"btn btn-primary px-4 py-3 rbtn panelbtn\">Reject</a>?>";?>
       <a onClick="openMsg();" class="btn btn-primary px-4 py-3 mbtn panelbtn">Message</a>
-      <a onclick="Buy();" class="btn btn-primary px-4 py-3 panelbtn">Buy</a>
+      <?php if($user_type=="Keells") echo "<a onclick=\"Buy();\" class=\"btn btn-primary px-4 py-3 panelbtn\">Buy</a>";?>
       </div>
       </div>
 

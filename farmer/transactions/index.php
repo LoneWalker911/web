@@ -44,9 +44,9 @@ header('Pragma: no-cache');
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
     <ul class="navbar-nav nav ml-auto">
-    <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-    <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-    <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Analatics</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/farmer#home-section" class="nav-link"><span>Home</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/farmer#services-section" class="nav-link"><span>Services</span></a></li>
+    <li class="nav-item"><a href="//localhost/web/farmer#chart-section" class="nav-link"><span>Analatics</span></a></li>
     <li class="nav-item"><a href="//localhost/web/farmer/harvest" class="nav-link"><span>My Reports</span></a></li>
     <li class="nav-item"><a href="//localhost/web/farmer/transactions" class="nav-link"><span>Transactions</span></a></li>
     <!-- <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> -->
