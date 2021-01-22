@@ -16,7 +16,7 @@ var mapProp= {
 map = new google.maps.Map(document.getElementById("googleMap2"),mapProp);
 
 google.maps.event.addListener(map,'click',function() {
-FetchList();
+//FetchList();
 });
 
 }
@@ -131,7 +131,7 @@ function marker(lat,lon,id,flag)
 
 google.maps.event.addListener(map,'click',function() {
 activeInfoWindow.close();
-FetchList();
+//FetchList();
 });
 markers.push(mark);
 }

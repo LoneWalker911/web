@@ -78,7 +78,7 @@ header('Pragma: no-cache');
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    $sql = "SELECT harvest.id, crop.crop_type, trim(qty_kg)+0 AS qty, price, flag_code, date, expiry_timestamp, status FROM harvest,crop,login WHERE 1=login.user_type_id AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
+    $sql = "SELECT harvest.id, crop.crop_type, trim(qty_kg)+0 AS qty, price, flag_code, date, expiry_timestamp, status FROM harvest,crop,login WHERE (1=login.user_type_id OR login.user_type_id=2) AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {

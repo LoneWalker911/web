@@ -61,7 +61,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT farmer_id FROM harvest,login WHERE  login.user_type_id=1 AND login.loginstring='$loginString' AND harvest.id=$id";
+$sql = "SELECT farmer_id FROM harvest,login WHERE (1=login.user_type_id OR login.user_type_id=2) AND login.loginstring='$loginString' AND harvest.id=$id";
 
   $result = mysqli_query($conn, $sql);
   if (mysqli_num_rows($result) > 0){

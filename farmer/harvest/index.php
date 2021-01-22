@@ -36,7 +36,7 @@ header('Pragma: no-cache');
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target scrolled awake" id="ftco-navbar">
     <div class="container">
-    <a class="navbar-brand" href="/web/public"><span>KEELLS</span>AGRI-FARMER</a>
+    <a class="navbar-brand" href="/web/farmer"><span>KEELLS</span>AGRI-FARMER</a>
     <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="oi oi-menu"></span> Menu
     </button>

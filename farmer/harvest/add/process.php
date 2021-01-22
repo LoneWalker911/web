@@ -193,7 +193,7 @@ if ($pass) {
 
       if (mysqli_query($conn, $sql))
       {
-
+        header("Location:/web/farmer/harvest");
       }
       else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);

@@ -78,7 +78,7 @@ $loginString=htmlspecialchars($_COOKIE['usr']);
     require '../../dbcon.php';
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    $sql = "SELECT transaction.id, harvest.id AS hid, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE harvest.id=transaction.harvest_id AND 1=login.user_type_id AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
+    $sql = "SELECT transaction.id, harvest.id AS hid, crop.crop_type, trim(transaction.qty_kg)+0 AS qty, harvest.price AS hprice, transaction.price AS tprice, harvest.date AS hdate, transaction.date AS tdate FROM harvest,crop,login,transaction WHERE harvest.id=transaction.harvest_id AND (1=login.user_type_id OR login.user_type_id=2) AND login.loginstring='$loginString' AND harvest.crop_type_id=crop.id ORDER BY harvest.date DESC";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {

@@ -99,7 +99,7 @@ if(!isset($_REQUEST['id'])) exit;
       <span class="position panelcontact" style="font-style:italic">Listed on:<?php echo $date; ?></span>
       <br>
       <span id="stat"><?php echo "<p style=\"display:inline\" class='text-info'>".$status."</p>"; ?></span>
-      <br><br>
+      <br>
       <div class="icon">
         <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(3)\""; else echo "style=\"cursor:auto;width:50px;height:60px;\""; ?> <?php if($flag=="3") echo"id=\"redflag\""; ?> class="redflag" src="//localhost/web/images/redflag.png" style="width:50px;height:60px;">
         <img <?php if($user_type=="Keells") echo "onclick=\"updateFlag(2)\""; else echo "style=\"cursor:auto;width:50px;height:60px;\""; ?> <?php if($flag=="2") echo"id=\"yellflag\""; ?> class="yellflag" src="//localhost/web/images/yellowflag.png" style="width:50px;height:60px;">
@@ -110,9 +110,11 @@ if(!isset($_REQUEST['id'])) exit;
            </p>
       </div>
       <br>
-      <?php if($user_type=="Keells") echo "<a onclick=\"reject();\" class=\"btn btn-primary px-4 py-3 rbtn panelbtn\">Reject</a>?>";?>
+      <?php if($user_type=="Keells") echo "<a onclick=\"reject();\" class=\"btn btn-primary px-4 py-3 rbtn panelbtn\">Reject</a>";?>
       <a onClick="openMsg();" class="btn btn-primary px-4 py-3 mbtn panelbtn">Message</a>
       <?php if($user_type=="Keells") echo "<a onclick=\"Buy();\" class=\"btn btn-primary px-4 py-3 panelbtn\">Buy</a>";?>
+      <br>
+      <a onclick="FetchList();" class="btn btn-warning px-4 py-3 panelbtn">Close</a>
       </div>
       </div>
 

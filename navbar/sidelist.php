@@ -7,7 +7,7 @@
           die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "SELECT harvest.id,farmer.nic,farmer.name,crop.crop_type,qty_kg,price,picture_1,date FROM harvest, crop,farmer WHERE harvest.crop_type_id=crop.id AND harvest.farmer_id=farmer.nic AND  harvest.expiry_timestamp > NOW() ORDER BY harvest.date DESC,farmer_id";
+        $sql = "SELECT harvest.id,farmer.nic,farmer.name,crop.crop_type,qty_kg,price,picture_1,date FROM harvest, crop,farmer WHERE harvest.crop_type_id=crop.id AND harvest.farmer_id=farmer.nic AND  harvest.expiry_timestamp > NOW() AND (harvest.status IS NULL OR harvest.status='Purchased') ORDER BY harvest.date DESC,farmer_id";
 
         $result = mysqli_query($conn, $sql);
         $temp_id="";
